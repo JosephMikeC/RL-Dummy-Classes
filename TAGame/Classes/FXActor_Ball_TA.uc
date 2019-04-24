@@ -27,3 +27,4 @@ var privatewrite transient int HitTeamNum;
 var privatewrite transient float TouchingWorldTime;
 var privatewrite transient bool bInAir;
 var privatewrite transient bool bSuperSonic;
+var() float MaxTrailDilation;

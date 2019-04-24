@@ -42,7 +42,8 @@ var(Setup) array<Actor> SpawnPoints;
 var privatewrite transient float BotSkill;
 /** The amount of time it takes a car to respawn after being killed */
 var() int RespawnTime;
-//var array<Mutator_TA> Mutators;
+var() array<Mutator_TA> DefaultMutators;
+var transient array<Mutator_TA> Mutators;
 var() privatewrite float MatchTimeDilation;
 /** HUD Archetype for this game event */
 var() HUD HUDArchetype;

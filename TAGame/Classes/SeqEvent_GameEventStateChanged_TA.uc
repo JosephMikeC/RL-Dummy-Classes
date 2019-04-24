@@ -7,7 +7,7 @@
  *******************************************************************************/
 class SeqEvent_GameEventStateChanged_TA extends SequenceEvent;
 
-Var String StateName;
+var string StateName;
 
 defaultproperties
 {

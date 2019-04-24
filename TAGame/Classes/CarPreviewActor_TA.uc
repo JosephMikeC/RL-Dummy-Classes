@@ -26,7 +26,7 @@ var transient array<ProductAsset_TA> PreviewProducts
 var transient FXActor_Boost_TA BoostFX
 var transient ProductSlot_TA PreviewSlot
 var transient Team_TA TeamArchetype
-var String PlayerName
+var string PlayerName
 var transient FXActor_X BodyFX
 var transient ProductAsset_Boost_TA BoostAsset
 var transient ProductAsset_SupersonicTrail_TA SupersonicAsset
@@ -71,7 +71,7 @@ void FindTurnTableActor () {}
 void eventOnOwnerChanged () {}
 void Tick (float DeltaTime) {}
 void SetPreviewHidden (bool bHide) {}
-void SetPlayerName (String InPlayerName) {}
+void SetPlayerName (string InPlayerName) {}
 void AnimateBody () {}
 void AnimateWheels () {}
 void AnimateAttachment (ProductSlot_TA Slot, PrimitiveComponent AttachmentComponent, Name CustomAnimName) {}

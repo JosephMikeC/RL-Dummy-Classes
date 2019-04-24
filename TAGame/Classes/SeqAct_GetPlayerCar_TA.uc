@@ -8,7 +8,7 @@
 class SeqAct_GetPlayerCar_TA extends SequenceAction;
 
 var() string PlayerName;
-var transient Car_TA FoundActor;
+var transient Actor FoundActor;
 
 defaultproperties
 {
@@ -18,7 +18,6 @@ defaultproperties
 	 bCallHandler=false
      VariableLinks(0)=(ExpectedType=Class'Engine.SeqVar_Object',LinkDesc="Found Actor",PropertyName=FoundActor,bWriteable=true,bSequenceNeverReadsOnlyWritesToThisVar=false,bModifiesLinkedObject=false,bHidden=false,MinVars=1,MaxVars=255,DrawX=0,CachedProperty=none,bAllowAnyType=false,bMoving=false,bClampedMax=false,bClampedMin=false,OverrideDelta=0)
 }
-
 
 event Activated()
 {
