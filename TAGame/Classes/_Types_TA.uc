@@ -196,19 +196,16 @@ struct SeasonTeamRank
 
 struct SeasonPlayer
 {
-    /** Which team this player belongs to */
+    // Which team this player belongs to
     var databinding int Team;
-    /** Which team this player belongs to// Player's name
- */
+
+    // Player's name
     var databinding string Name;
-    /** Which team this player belongs to// Player's name
-// Players ID
- */
+    
+    // Players ID
     var databinding string Id;
-    /** Which team this player belongs to// Player's name
-// Players ID
-// Bot or human?
- */
+    
+    // Bot or human?
     var databinding bool bBot;
 
 

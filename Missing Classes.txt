@@ -1,0 +1,12 @@
+EngineAudioBlowoffComponent_TA
+EngineAudioPreviewBase_TA
+EngineAudioPreview_TA
+EngineAudioProfileBase_TA
+EngineAudioProfile_TA
+EngineAudioProfileREV_TA
+EngineAudioRevSimBoost_TA
+EngineAudioRevSimBoostLevel_TA
+EngineAudioRevSimLimiter_TA
+EngineAudioRevSimResistance_TA
+EngineAudioRevSimReverse_TA
+EngineAudioRevSimVelocitySync_TA

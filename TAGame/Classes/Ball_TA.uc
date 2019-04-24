@@ -21,19 +21,28 @@ struct native ExplosionData
 };
 
 
-/** visual mesh */
+/** Visual mesh */
 var() export editinline StaticMeshComponent StaticMesh;
 /** FX to replace the ball with when the game ends */
-//var() FXActor_X EndOfGameFXArchetype;
+var() FXActor_X EndOfGameFXArchetype;
 /** explosion to spawn */
+// Commented out as we do not have the class
 //var() Explosion_X ExplosionArchetype;
 //var() Explosion_X NoGoalExplosionArchetype;
-var export editinline BallCamTarget_TA BallCamTarget;
-var bool bNextCamTargetOnExplode;
+var() bool bAllowPlayerExplosionOverride;
 var transient bool bNotifyGroundHit;
 var privatewrite repnotify transient bool bEndOfGameHidden;
+var bool bFadeIn;
+var bool bFadeOut;
 var const transient bool bPredictionOnGround;
+var transient bool bCanBeAttached;
+var transient bool bItemFreeze;
+var() repnotify Vector MagnusCoefficient;
+var export editinline BallCamTarget_TA BallCamTarget;
 var transient float Radius;
+var float VisualRadius;
+var bool bNextCamTargetOnExplode;
+// Missing class
 //var transient array<BallHitInfo> Touches;
 var transient float LastCalculateCarHit;
 var transient Vector InitialLocation;
@@ -42,10 +51,19 @@ var transient float LastHitWorldTime;
 var repnotify float ReplicatedBallScale;
 var repnotify StaticMesh ReplicatedBallMesh;
 var repnotify float ReplicatedWorldBounceScale;
-//var privatewrite transient Constraint2D_TA Constraint;
+var repnotify float ReplicatedBallGravityScale;
+var repnotify float ReplicatedBallMaxLinearSpeedScale;
+var repnotify float ReplicatedAddedCarBounceScale;
+var float AdditionalCarGroundBounceScaleZ;
+var float AdditionalCarGroundBounceScaleXY;
+var privatewrite repnotify PhysicalMaterial ReplicatedPhysMatOverride;
 var privatewrite transient byte HitTeamNum;
 var privatewrite repnotify transient GameEvent_Soccar_TA GameEvent;
 var privatewrite repnotify transient ExplosionData ReplicatedExplosionData;
+var privatewrite repnotify transient ExplosionDataExtended ReplicatedExplosionDataExtended;
+// Missing class
+//var privatewrite transient Constraint2D_TA Constraint;
+// Missing class
 //var privatewrite transient Explosion_X Explosion;
 var privatewrite transient float ExplosionTime;
 var privatewrite transient Vector OldLocation;
@@ -54,6 +72,22 @@ var MaterialInterface FadeMaterial;
 var() float PredictionTimestep;
 //var const transient array<PredictedPosition> PredictedPositions;
 var const transient float LastPredictionTime;
+var privatewrite transient GoalPenetrationData GoalPenetration;
+var() float GroundForce;
+var transient Car_TA CurrentAffector;
+var export editinline Ball_TrajectoryComponent_TA TrajectoryComponent;
+var const export editinline PitchTekDrawingComponent PitchTekComponent;
+
+// Don't have the correct types, possibly are references to Event functions for this class?
+/**
+var ScriptDelegate __EventCarTouch__Delegate;
+var ScriptDelegate __EventHitWorld__Delegate;
+var ScriptDelegate __EventHitGround__Delegate;
+var ScriptDelegate __EventHitGoal__Delegate;
+var ScriptDelegate __EventGameEventSet__Delegate;
+var ScriptDelegate __EventExploded__Delegate;
+*/
+
 
 replication
 {

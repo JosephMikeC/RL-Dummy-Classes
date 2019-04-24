@@ -5,4 +5,15 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class BoostMesh_TA extends Object;
+class BoostMesh_TA extends Object
+    placeable;
+var() RandomRange FadeInTime;
+var() RandomRange FadeOutTime;
+// Don't have the class
+//var() array<AnimatedMaterialMesh> MaterialParams;
+var transient float MaxMaterialTime;
+
+defaultproperties {
+    FadeInTime = 3.0;
+    FadeOutTime = 3.0;
+}
