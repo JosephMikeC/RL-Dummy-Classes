@@ -1,0 +1,1 @@
+class GoalVolume_Hoops_TA extends GoalVolume_TA;
