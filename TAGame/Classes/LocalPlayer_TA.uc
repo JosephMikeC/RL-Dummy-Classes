@@ -203,7 +203,7 @@ function HandleSplitScreenTypeChanged(GameViewportClient_TA InViewportClient)
 
 protected function GFxData_LocalPlayer_TA.ESplitScreenPosition GetSplitScreenPosition(GameViewportClient InViewportClient)
 {
-    local Vector ScreenCenter;
+    local vector ScreenCenter;
 
     ScreenCenter.X = Origin.X + (Size.X * 0.50);
     ScreenCenter.Y = Origin.Y + (Size.Y * 0.50);

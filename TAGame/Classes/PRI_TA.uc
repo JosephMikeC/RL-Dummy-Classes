@@ -45,7 +45,7 @@ var privatewrite transient byte CameraYaw;
 var privatewrite transient array<ProductStat_TA> ProductStats;
 var privatewrite transient array<ProductStat> PendingProductStatValues;
 var privatewrite repnotify UniqueNetId PartyLeader;
-var private transient Vector LastCarLocation;
+var private transient vector LastCarLocation;
 var privatewrite repnotify transient int TotalXP;
 var privatewrite transient array<PlayerTitle_TA> PlayerTitles;
 var privatewrite transient string SanitizedPlayerName;

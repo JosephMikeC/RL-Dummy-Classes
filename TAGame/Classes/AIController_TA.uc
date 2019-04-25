@@ -66,25 +66,28 @@ var() SkillRange SkillThrottleSpeed;
 var privatewrite transient GameEvent_TA GameEvent;
 var privatewrite transient AIManager_TA AIManager;
 var protected transient array<NamedEvent> QueuedEvents;
-//var transient VehicleInputs Input;
-var privatewrite transient Vector ForwardDir;
+var transient VehicleInputs Input;
+var privatewrite transient vector ForwardDir;
 var privatewrite transient Rotator ForwardRotation;
-var transient Vector GroundNormal;
+var transient vector GroundNormal;
 var protectedwrite transient array<CachedProxyData> CachedProxyDatas;
 var protectedwrite transient array<CachedTargetData> CachedTargetDatas;
 var protectedwrite native transient Map_Mirror TargetFilterMap;
 var protectedwrite transient array<BTNode> CachedTargetFilters;
-var transient Vector DebugDriveDestination;
-//var private native transient CachedObstaclesData CachedObstacles;
-//var privatewrite transient AITraits Traits;
+var transient vector DebugDriveDestination;
+var private native transient CachedObstaclesData CachedObstacles;
+var privatewrite transient AITraits Traits;
 var privatewrite transient array<Car_TA> TeamCars;
 var privatewrite transient array<Car_TA> EnemyCars;
 var privatewrite transient array<Car_TA> OtherCars;
 var const transient bool bForceUpdateConditions;
 var transient bool bCanUseBoost;
+var transient bool bBeingReplaced;
 var AIRole_TA TestRole;
 var transient GameShare_TA GameShare;
 var const transient Actor SelectedActor;
+var transient float FieldScalar;
+var byte ForcedTeam;
 /**
 var delegate<EventNamedEvent> __EventNamedEvent__Delegate;
 var delegate<EventSkillChanged> __EventSkillChanged__Delegate;
@@ -188,7 +191,7 @@ final function DoNothing()
     
 }
 
-final function DebugDriveTo(Vector Destination)
+final function DebugDriveTo(vector Destination)
 {
   
 }
@@ -199,7 +202,7 @@ function CleanupPRI()
 }
 
 // Export UAIController_TA::execAdvanceLocation(FFrame&, void* const)
-native final function Vector AdvanceLocation(const out Vector Loc, const out Vector Vel, const out Vector Accel, float Time)
+native final function vector AdvanceLocation(const out vector Loc, const out vector Vel, const out vector Accel, float Time)
 {
     //native.Loc;
     //native.Vel;
@@ -252,12 +255,12 @@ native final function BTProxyData FlattenPhysics(const out BTProxyData ProxyData
     //native.ProxyData;        
 }
 
-final function Vector FlattenDestination(Vector Destination)
+final function vector FlattenDestination(vector Destination)
 {
     //return ReturnValue;    
 }
 
-final function Vector FlattenOffset(Vector Offset, optional out float Height)
+final function vector FlattenOffset(vector Offset, optional out float Height)
 {
 
     //return ReturnValue;    
@@ -323,14 +326,14 @@ protected event bool GetProxyDataInternal(BTProxyType Type, int Index, out BTPro
 }
 **/
 // Export UAIController_TA::execGetObstacle(FFrame&, void* const)
-native final function bool GetObstacle(Vector Destination, optional out Vector HitLocation)
+native final function bool GetObstacle(vector Destination, optional out vector HitLocation)
 {
     //native.Destination;
     //native.HitLocation;        
 }
 
 // Export UAIController_TA::execGetObstacleInRadius(FFrame&, void* const)
-native final function bool GetObstacleInRadius(Vector Destination, float Radius, optional out Vector HitLocation)
+native final function bool GetObstacleInRadius(vector Destination, float Radius, optional out vector HitLocation)
 {
     //native.Destination;
     //native.Radius;

@@ -38,13 +38,11 @@ var() float DodgeZDampingUpTime;
 var() float DodgeImpulseScale;
 var() float DodgeTorqueScale;
 /** FX actor events */
-var() name JumpEvent;
-/** FX actor events */
-//var() @NULL DoubleJumpEvent;
-/** FX actor events */
-var() NamedEvent DodgeEvent;
-//var private transient @NULL DodgeTorque;
-//var private transient @NULL DodgeDirection;
+var() FXActorEvent_X JumpEvent;
+var() FXActorEvent_X DoubleJumpEvent;
+var() FXActorEvent_X DodgeEvent;
+var private transient vector DodgeTorque;
+var private transient vector DodgeDirection;
 
 protected simulated function OnCreated()
 {

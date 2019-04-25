@@ -12,9 +12,9 @@ class RBActor_TA extends Pawn_X
 struct native WorldContactData
 {
     var bool bHasContact;
-    var Vector Location;
-    var Vector Velocity;
-    var Vector Normal;
+    var vector Location;
+    var vector Velocity;
+    var vector Normal;
 
     structdefaultproperties
     {
@@ -82,9 +82,9 @@ var const transient ReplicatedRBState RBState;
 var const transient ReplicatedRBState ReplicatedRBState;
 var const transient ReplicatedRBState ClientCorrectionRBState;
 var const transient WorldContactData WorldContact;
-var const transient Vector SyncErrorLocation;
+var const transient vector SyncErrorLocation;
 var const transient float SyncErrorAngle;
-var const transient Vector SyncErrorAxis;
+var const transient vector SyncErrorAxis;
 //var export editinline AkParamGroup Ak;
 /** FXActor to create */
 var() FXActor_X FXActorArchetype;

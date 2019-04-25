@@ -12,7 +12,7 @@ class CarComponent_TA extends Actor
     notplaceable;
 
 /** FXActor in charge of our visuals */
-//var() @NULL FXActorArchetype;
+var() FXActor_X FXActorArchetype;
 /** Event to toggle when we activate/deactivate */
 var() float FXEvent;
 /** Automatically activate after we are created for a car */
@@ -30,7 +30,7 @@ var privatewrite transient Car_TA Car;
 var private transient float ActivityTime;
 var privatewrite repnotify transient float ReplicatedActivityTime;
 var privatewrite transient float FXActor;
-//var delegate<@NULL> __EventActivationChanged__Delegate;
+//var delegate<EventActivationChanged> __EventActivationChanged__Delegate;
 
 
 simulated event ReplicatedEvent(name VarName)

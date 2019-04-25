@@ -16,16 +16,16 @@ struct native ActiveSound
 };
 
 /** Offset from owner location */
-//var() const @NULL Translation;
+var() const vector Translation;
 /** Offset from owner rotation */
-//var() const @NULL Rotation;
+var() const Rotator Rotation;
 /** Detach when all of our sounds are completed */
 var() const bool bDetachOnComplete;
 var const transient bool bRegistered;
 var const transient bool bUpdateOrientation;
 //var const transient @NULL CachedParentToWorld;
-//var const transient @NULL WorldLocation;
-//var const transient @NULL WorldRotation;
+var const transient vector WorldLocation;
+var const transient Rotator WorldRotation;
 var const export editinline transient bool Params;
 //var const transient array ActiveSounds;
 /**

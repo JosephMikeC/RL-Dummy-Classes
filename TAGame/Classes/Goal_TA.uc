@@ -25,7 +25,7 @@ var() const float GoalDirection;
 /** How many points to award for this goal. */
 var() int PointsToAward;
 /** When using AutoCam if ball is with-in this extent then try to focus AutoCam on the Goal - Extent is in Local Goal Rotation */
-var(AutoCam) Vector AutoCamFocusExtent;
+var(AutoCam) vector AutoCamFocusExtent;
 /** In Local goal space extent location offset from center */
 var(AutoCam) _AITypes_TA GoalFocusLocationOffset;
 /** Scorer must be in this radius from goal in order for autocam to attach */
@@ -34,12 +34,12 @@ var(AutoCam) float MaxGoalScorerAttachRadius;
 var(AutoCam) AICachedGoalInfo GoalScoredDotDirection;
 /** The min dot angle required for player to be moving away from the goal in order to attach autocam onto player Range = -1 to 1 */
 var(AutoCam) float MinAttachGoalToScorerDot;
-var privatewrite transient Vector Location;
-var privatewrite transient Vector Direction;
+var privatewrite transient vector Location;
+var privatewrite transient vector Direction;
 var privatewrite transient Rotator Rotation;
-var privatewrite transient Vector LocalMin;
-var privatewrite transient Vector LocalMax;
-var privatewrite transient Vector LocalExtent;
+var privatewrite transient vector LocalMin;
+var privatewrite transient vector LocalMax;
+var privatewrite transient vector LocalExtent;
 
 defaultproperties
 {

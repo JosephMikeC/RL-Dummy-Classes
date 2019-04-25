@@ -16,7 +16,7 @@ struct native TimedLock
 
 };
 
-//var private const transient array<TimedLock> Locks;
+var private const transient array<TimedLock> Locks;
 var delegate<EventLockSet> __EventLockSet__Delegate;
 var delegate<EventLockExpired> __EventLockExpired__Delegate;
 

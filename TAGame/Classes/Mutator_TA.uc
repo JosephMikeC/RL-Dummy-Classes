@@ -13,10 +13,10 @@ defaultproperties
 
 protected event MutateObject(Object o) 
 {
-	return;
+	//return;
 }
 
 protected event Init(GameEvent_TA GameEvent) 
 {
-	return;
+	//return;
 }

@@ -8,21 +8,20 @@
 class CarComponent_AirControl_TA extends CarComponent_TA
     notplaceable;
 
-//var() @NULL AirTorque;
-var() NamedEvent AirDamping;
+var() Rotator AirTorque;
+var() Rotator AirDamping;
 var() float ThrottleForce;
+var transient float DodgeDisableTimeRemaining;
+var transient float ControlScale;
+var transient float AirControlSensitivity;;
+
+// I don't have the following in my references
 var() float DampingScale;
 var() float BoostingTorqueScale;
 var() float WaterPropForce;
-var transient float DodgeDisableTimeRemaining;
-var transient float ControlScale;
 
-protected event ApplyForces(float ActiveTime)
-{
-    //return;    
-}
+protected function PrePhysicsStep (float DeltaTime) {}
 
-protected function PrePhysicsStep(float DeltaTime)
-{
-    //return;    
-}
+protected event ApplyForces (float ActiveTime) {}
+
+protected event OnCreated () {}

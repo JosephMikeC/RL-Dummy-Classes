@@ -24,7 +24,7 @@ var float GoalDepth;
 /** GameEvent rounds that have been played */
 var() int GameEventRounds;
 var float EventStartTime;
-var Vector BallInitialVelocity;
+var vector BallInitialVelocity;
 /** Spawn Type Override */
 var() int SpawnIndexTypeOverride;
 var Cannon_TA Cannon;
@@ -33,8 +33,8 @@ var transient int WaveSpawnCount;
 var transient int RandomSpawnIndex;
 var Tutorial_TA Tutorial;
 var /*0x00000800-0x00000000*/ const string StartMessageArchetype;
-var Vector BallSpawnLocation;
-var Vector CarSpawnLocation;
+var vector BallSpawnLocation;
+var vector CarSpawnLocation;
 var Rotator CarSpawnRotation;
 var int PointsScoredThisRound;
 var int BallSpawnCount;

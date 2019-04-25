@@ -37,7 +37,7 @@ function SetTopperMaterial(MaterialInstanceConstant InTopperMaterial)
 }
 
 // Export UAntennaComponent_TA::execUpdateSpring(FFrame&, void* const)
-native function UpdateSpring(float DeltaTime, const out Vector BaseLocation, const out Rotator BaseRotation)
+native function UpdateSpring(float DeltaTime, const out vector BaseLocation, const out Rotator BaseRotation)
 {
   
 }

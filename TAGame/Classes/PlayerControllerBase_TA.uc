@@ -9,7 +9,7 @@ class PlayerControllerBase_TA extends PlayerController_X
     native;
 
 var() float SpectatorCameraAccel;
-var transient Vector SpectatorVelXY;
+var transient vector SpectatorVelXY;
 var transient float SpectatorVelZ;
 var() privatewrite PostProcessManager_TA PostProcessManagerArchetype;
 var privatewrite transient PostProcessManager_TA PostProcessManager;

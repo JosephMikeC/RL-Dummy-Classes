@@ -8,9 +8,12 @@
 class BallCamTarget_TA extends ActorComponent_X;
 
 /** Offset the focal point from our owner's location, transformed by owner's rotation */
-var() Vector LocalTranslation;
+var() vector LocalTranslation;
 /** Offset the focal point from our owner's location, in world space */
-var() Vector WorldTranslation;
+var() vector WorldTranslation;
+var() int Priority;
+
+// I do not have references to the following in my files
 /** Min and Max pitch for pulling the camera to the focal point */
 var() int PitchMin;
 /** Min and Max pitch for pulling the camera to the focal point */

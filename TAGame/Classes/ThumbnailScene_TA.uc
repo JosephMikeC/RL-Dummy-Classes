@@ -9,7 +9,7 @@ class ThumbnailScene_TA extends Object
     native;
 
 var array<ThumbnailComponent> SceneComponents;
-var Vector ViewTranslation;
+var vector ViewTranslation;
 var Rotator ViewRotation;
 var bool bForceAllUsedMipsResident;
 var Texture2D Background;

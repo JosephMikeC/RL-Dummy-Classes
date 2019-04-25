@@ -10,8 +10,8 @@ var() float BodyLifetime;
 
 // Not sure about these definitions
 /**
-Vector GetRandomAngularVelocity() {}
-Vector GetRandomVelocity(Rotator AttackerRotation) {}
+vector GetRandomAngularVelocity() {}
+vector GetRandomVelocity(Rotator AttackerRotation) {}
 void SpawnParts(DemolishData Data) {}
 void Init(DemolishData Data) {}
 */

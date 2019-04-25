@@ -51,9 +51,9 @@ struct native NamedEvent
 
 struct native BTProxyData
 {
-    var Vector Location;
-    var Vector Velocity;
-    var Vector Gravity;
+    var vector Location;
+    var vector Velocity;
+    var vector Gravity;
     var Rotator Rotation;
     var float Radius;
     var float Bounce;
@@ -65,6 +65,6 @@ struct native BTProxyData
 struct native AICachedGoalInfo
 {
     var export editinline Goal_TA Goal;
-    var Vector FieldSize;
+    var vector FieldSize;
 
 };

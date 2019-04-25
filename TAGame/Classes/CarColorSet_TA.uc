@@ -5,7 +5,7 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class CarColorSet_TA extends Object
+class CarColorSet_TA extends ColorPalette_X
     native;
 
 /** Grayscale values to include */
@@ -14,6 +14,11 @@ var() editoronly array<editoronly LinearColor> Grayscales;
 var() editoronly array<editoronly LinearColor> H;
 /** Brightness + Saturation pairs */
 var() editoronly array<editoronly LinearColor> SV;
+var() LinearColor ColorBlindColor;
+var() const array<DebugColor> DebugColors;
+var() float MinStadiumBrightness;
+
+// I don't have the following in my references
 /** Default Color ID (index into Colors table) */
 var() int DefaultId;
 /** How many hues we have (+1 for grayscale) */
@@ -22,3 +27,8 @@ var() const editconst int HueCount;
 var() const editconst int ValueCount;
 /** Generated list of colors */
 var() const editconst array<editconst LinearColor> Colors;
+
+function RebuildColors() {}
+function LinearColor GetFontColor(int ColorID) {}
+function float GetMinStadiumBrightness() {}
+event array<LinearColor> GetStadiumColors(int ColorID) {}

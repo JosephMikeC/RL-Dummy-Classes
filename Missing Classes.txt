@@ -1,3 +1,8 @@
+ToDo
+============
+Address script errors.
+
+
 _ShopTypes_TA
 AnimNodeBlend_TA
 AnimNodeBlendBoost_TA

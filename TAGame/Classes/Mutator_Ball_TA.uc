@@ -16,8 +16,8 @@ var() float BallSloMoRadius;
 var() float BallSloMoDiffSpeed;
 var() float BallMaxLinearSpeedScale;
 var() float BallMaxAngularSpeed;
-/** Not sure of type, was `struct FVector` */      
-var() Vector BallMagnusCoefficient;
+/** Not sure of type, was `struct Fvector` */      
+var() vector BallMagnusCoefficient;
 /** Not sure of type, was `class UPhysicalMaterial*` */       
 var() PhysicalMaterialProperty_TA PhysMatOverride;
 

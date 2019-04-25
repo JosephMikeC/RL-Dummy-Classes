@@ -32,7 +32,7 @@ var() editoronly ProductReplacement PlatformReplacement;
 //var(Thumbnail) duplicatetransient const Texture2D Thumbnail;
 //var(Thumbnail) editoronly ThumbnailRenderer_TA ThumbnailRenderer;
 /** Offset for camera in thumbnail scene - X forward, Y right, Z up */
-//var(Thumbnail) editoronly Vector ThumbnailCameraTranslationOffset<RebuildThumbnail=>;
+//var(Thumbnail) editoronly vector ThumbnailCameraTranslationOffset<RebuildThumbnail=>;
 /** Offset for camera rotation in thumbnail scene */
 //var(Thumbnail) editoronly Rotator ThumbnailCameraRotationOffset<RebuildThumbnail=>;
 /** Offset for product rotation in thumbnail scene */

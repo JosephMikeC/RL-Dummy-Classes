@@ -147,8 +147,8 @@ struct DemolishData
 {
     var Car_TA Attacker;
     var Car_TA Victim;
-    var Vector AttackerVelocity;
-    var Vector VictimVelocity;
+    var vector AttackerVelocity;
+    var vector VictimVelocity;
 
 };
 
@@ -269,7 +269,7 @@ struct SeasonMatch
 
 struct native TurningCircle
 {
-    var Vector Center;
+    var vector Center;
     var float Radius;
 
  
@@ -440,13 +440,13 @@ struct native BallHitInfo
     var PRI_TA AttackerPRI;
     var name CarName;
     var int TeamNum;
-    var  ReplicatedRBState PreHitCarPhysics;
-    var  ReplicatedRBState PreHitBallPhysics;
-    var  ReplicatedRBState PostHitBallPhysics;
+    var ReplicatedRBState PreHitCarPhysics;
+    var ReplicatedRBState PreHitBallPhysics;
+    var ReplicatedRBState PostHitBallPhysics;
     var float Distance;
     var float Time;
-    var Vector HitLocation;
-    var Vector HitNormal;
+    var vector HitLocation;
+    var vector HitNormal;
     var bool bDodging;
     var bool bWheelsTouching;
 	
@@ -490,14 +490,14 @@ struct native AccumulatedRigidBodyCollision
     var Actor Actor;
     var export editinline PrimitiveComponent Component;
     var PhysicalMaterial PhysMat;
-    var Vector Velocity;
-    var Vector OtherVelocity;
-    var Vector Location;
-    var Vector Normal;
-    var Vector NormalForce;
-    var Vector FrictionForce;
-    var Vector NormalVelocity;
-    var Vector FrictionVelocity;
+    var vector Velocity;
+    var vector OtherVelocity;
+    var vector Location;
+    var vector Normal;
+    var vector NormalForce;
+    var vector FrictionForce;
+    var vector NormalVelocity;
+    var vector FrictionVelocity;
     var int NumCollisions;
     var int NumContacts;
 
@@ -510,7 +510,7 @@ struct native ProductAttachment
     var() SkeletalMesh SkeletalMesh;
     var() MaterialInterface Material;
     var() float Scale;
-    var() Vector Translation;
+    var() vector Translation;
     var() _Types_TA.EProductAttachmentSocket Socket;
     var() export editinline AntennaComponent_TA Antenna;
     var() editinline array<editinline AttachmentBehavior_TA> Behaviors;
@@ -525,10 +525,10 @@ struct native WheelContactData
     var float HasContactChangeTime;
     var Actor Actor;
     var export editinline PrimitiveComponent Component;
-    var Vector Location;
-    var Vector Normal;
-    var Vector LatDirection;
-    var Vector LongDirection;
+    var vector Location;
+    var vector Normal;
+    var vector LatDirection;
+    var vector LongDirection;
     var PhysicalMaterialProperty_TA PhysMatProp;
 
   
@@ -536,11 +536,11 @@ struct native WheelContactData
 
 struct native SimpleSpringSettings
 {
-    var() Vector Strength;
-    var() Vector Damping;
-    var() Vector MaxDisplacement;
+    var() vector Strength;
+    var() vector Damping;
+    var() vector MaxDisplacement;
     var() float Mass;
-    var() Vector MassOffset;
+    var() vector MassOffset;
     var() float MaxSpeed;
     var(Debug) bool bDebug;
     var(Debug) float DrawDebugOffset;
@@ -570,14 +570,13 @@ struct SimilarLogoGroup
 
 };
 
-/**
 var delegate<ProductLoadedDelegate> __ProductLoadedDelegate__Delegate;
 
 private final delegate ProductLoadedDelegate(int ProductID, ProductAsset_TA Product)
 {
     //return;    
 }
-**/
+
 static final function ClientLoadoutData ConvertToClientLoadout(LoadoutData FromData)
 { 
 }

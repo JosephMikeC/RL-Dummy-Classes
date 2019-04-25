@@ -12,12 +12,12 @@ class AIManager_TA extends Actor
 struct native CachedNavMeshLocation
 {
     var Actor Actor;
-    var Vector NavMeshLocation;
-    var Vector OldActorLocation;
+    var vector NavMeshLocation;
+    var vector OldActorLocation;
 };
 
-//var() const config bool bFlushAILogEachLine;
-//var() const config bool bOutputLogToWindow;
+var() const config bool bFlushAILogEachLine;
+var() const config bool bOutputLogToWindow;
 var transient bool bPauseForDirtyTrees;
 /** global AI locks */
 var() const export editinline BTLockCollection Locks;

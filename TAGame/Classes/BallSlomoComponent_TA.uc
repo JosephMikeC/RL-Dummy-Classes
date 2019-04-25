@@ -9,12 +9,12 @@ var transient float BallSloMoDiffSpeed;
 
 defaultproperties 
 {
-	BallSloMoRadius = 0.0;
-	BallSloMoDuration = 0.0;
-	BallSloMoDilation = 0.0;
-	BallSloMoCooldown = 0.0;
-	BallSloMoNext = 0.0;
-	BallSloMoDiffSpeed = 0.0;
+	BallSloMoRadius = 1.0;
+	BallSloMoDuration = 1.0;
+	BallSloMoDilation = 1.0;
+	BallSloMoCooldown = 1.0;
+	BallSloMoNext = 1.0;
+	BallSloMoDiffSpeed = 1.0;
 }
 
 protected event RestoreTimeDilation();

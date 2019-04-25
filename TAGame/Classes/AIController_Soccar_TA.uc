@@ -19,24 +19,23 @@ var() BTProxyType BallEnemyGoalLineProxyType;
 var() BTProxyType BallProjectedProxyType;
 var() BTProxyType TeamGoalProxyType;
 var() BTProxyType EnemyGoalProxyType;
+var() BTProxyType MidFieldProxyType;
 var() BTTarget BallTarget;
 var() BTTarget TeamGoalTarget;
-/**
+var() BTTarget EnemyGoalTarget;
 var privatewrite transient GameEvent_Soccar_TA SoccarGame;
 var privatewrite transient Ball_TA Ball;
 var privatewrite transient AICachedGoalInfo TeamGoalInfo;
 var privatewrite transient AICachedGoalInfo EnemyGoalInfo;
-**/
 var transient float LastBallHitTime;
 
-/**
 var delegate<EventBallChanged> __EventBallChanged__Delegate;
 
 delegate EventBallChanged(AIController_Soccar_TA SoccarAI)
 {
     //return;    
 }
-**/
+    
 function Init(GameEvent_TA InGameEvent)
 {
     

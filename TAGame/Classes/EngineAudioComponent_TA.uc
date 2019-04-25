@@ -8,7 +8,7 @@ var() EngineAudioProfile_TA Profile;
 /**
 void PrintDebugInfo (DebugDrawer Drawer) {}
 float GetNormalizedRpm () {}
-Name GetNativeStateName () {}
+name GetNativeStateName () {}
 void DestroyNativeState () {}
 void HandleDisabled () {}
 void InitFromAsset (ProductAsset_EngineAudio_TA EngineAsset) {}

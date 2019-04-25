@@ -12,7 +12,7 @@ struct native BTStatusLog
 {
     var BTNode Node;
     var int Depth;
-    //var _AITypes_TA.EBTStatus Status;
+    var EBTStatus Status;
     var string Message;
     var bool bSetMessage;
     var bool bCondition;
@@ -23,7 +23,7 @@ struct native BTStatusLog
         // Object Offset:0x025D51F4
         Node=none
         Depth=0
-        //Status=EBTStatus.BTStatus_Fail
+        Status=EBTStatus.BTStatus_Fail
         Message=""
         bSetMessage=false
         bCondition=false
@@ -33,7 +33,7 @@ struct native BTStatusLog
 
 /** Topmost node of the tree */
 var() private const BTNode Root;
-//var const transient _AITypes_TA.EBTStatus RootStatus;
+var const transient EBTStatus RootStatus;
 var privatewrite transient AIController_TA AI;
 /** Print our status logs to the console when something changes */
 var() bool bPrintStatusLogs;
@@ -44,7 +44,7 @@ var const transient array<BTStatusLog> StatusLogs;
 var const transient int StatusLogsIndex;
 var const transient array<int> StatusLogsStack;
 //var private transient DebugDrawer_X CanvasDrawer;
-//var privatewrite transient array<BTDynamicLinkData> DynamicLinks;
+var privatewrite transient array<BTDynamicLinkData> DynamicLinks;
 /**
 var delegate<EventDynamicLinksChanged> __EventDynamicLinksChanged__Delegate;
 

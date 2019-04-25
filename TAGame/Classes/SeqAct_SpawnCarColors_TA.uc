@@ -78,7 +78,7 @@ protected final function LinearColor GetRGBFromColorSet(LinearColor Hue, LinearC
 
 protected function CarPreviewActor_TA SpawnCar(LinearColor TeamColor, LinearColor AccentColor, float OffsetX, float OffsetY)
 {
-    local Vector Location;
+    local vector Location;
     local Rotator Rotation;
     local CarPreviewActor_TA PreviewActor;
     local LoadoutData Loadout;

@@ -11,7 +11,7 @@ class Ball_TA extends RBActor_TA
 struct native ExplosionData
 {
     var export editinline Goal_TA Goal;
-    var Vector Location;
+    var vector Location;
 
     structdefaultproperties
     {
@@ -37,15 +37,15 @@ var bool bFadeOut;
 var const transient bool bPredictionOnGround;
 var transient bool bCanBeAttached;
 var transient bool bItemFreeze;
-var() repnotify Vector MagnusCoefficient;
+var() repnotify vector MagnusCoefficient;
 var export editinline BallCamTarget_TA BallCamTarget;
 var transient float Radius;
 var float VisualRadius;
+// This boolean is not present in my files.
 var bool bNextCamTargetOnExplode;
-// Missing class
-//var transient array<BallHitInfo> Touches;
+var transient array<BallHitInfo> Touches;
 var transient float LastCalculateCarHit;
-var transient Vector InitialLocation;
+var transient vector InitialLocation;
 var transient Rotator InitialRotation;
 var transient float LastHitWorldTime;
 var repnotify float ReplicatedBallScale;
@@ -62,11 +62,11 @@ var privatewrite repnotify transient GameEvent_Soccar_TA GameEvent;
 var privatewrite repnotify transient ExplosionData ReplicatedExplosionData;
 var privatewrite repnotify transient ExplosionDataExtended ReplicatedExplosionDataExtended;
 // Missing class
-//var privatewrite transient Constraint2D_TA Constraint;
-// Missing class
 //var privatewrite transient Explosion_X Explosion;
 var privatewrite transient float ExplosionTime;
-var privatewrite transient Vector OldLocation;
+var privatewrite transient vector OldLocation;
+// This property is not present in my files.
+var privatewrite transient Constraint2D_TA Constraint;
 var MaterialInterface FadeMaterial;
 /** Timestep when predicting our next position(s) */
 var() float PredictionTimestep;
@@ -133,7 +133,7 @@ simulated event PostBeginPlay()
     //return;    
 }
 
-protected simulated function OnHitWorld(Vector HitLoc, Vector HitNormal)
+protected simulated function OnHitWorld(vector HitLoc, vector HitNormal)
 {
     //return;    
 }
@@ -143,7 +143,7 @@ simulated function Reset()
     //return;    
 }
 
-function RecordCarHit(Car_TA HitCar, Vector HitLocation, Vector HitNormal)
+function RecordCarHit(Car_TA HitCar, vector HitLocation, vector HitNormal)
 {
     local BallHitInfo Hit;
 	
@@ -165,7 +165,7 @@ simulated function SetGameEvent(GameEvent_Soccar_TA SoccarGame)
     //return;    
 }
 
-protected event OnHitGoal(Goal_TA Goal, Vector HitLoc)
+protected event OnHitGoal(Goal_TA Goal, vector HitLoc)
 {
     //return;    
 }

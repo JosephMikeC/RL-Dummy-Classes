@@ -13,27 +13,30 @@ var() float BoostConsumptionRate;
 /** maximum amount of boost (in seconds) this car can hold */
 var() float MaxBoostAmount;
 /** how much boost the car starts with */
-var() float StartBoostAmount;
+var() repnotify float StartBoostAmount;
 /** how much boost (in seconds) the car currently has */
 var() protectedwrite float CurrentBoostAmount;
 var() protected float BoostModifier;
 var protected transient float LastBoostAmountRequestTime;
 var protected transient float LastBoostAmount;
+var transient bool bPendingConfirmBoostAmount;
+var transient bool bUnlimitedBoost;
+var() bool bNoBoost;
 /** Overall boost force */
 var() float BoostForce;
 /** when someone presses boost, don't cut off unless this amount of time has passed: prevents annoying on/off boosting */
 var() float MinBoostTime;
-var float RechargeRate;
-var float RechargeDelay;
-var() bool bUnlimitedBoost;
-var() bool bNoBoost;
+var repnotify float RechargeRate;
+var repnotify float RechargeDelay;
+var() repnotify int UnlimitedBoostRefCount;
+var repnotify transient byte ReplicatedBoostAmount;
+var ProductAsset_Boost_TA BoostAsset;
 var transient bool bOnlyApplyRechargeToMyHalf;
 var transient bool bOnlyApplyRechargeToOpposingHalf;
 var transient bool bDemolishOnEmptyMyHalf;
 var transient bool bDemolishOnEmptyOpposingHalf;
 var transient bool bCachedOnyMyHalf;
-var repnotify transient byte ReplicatedBoostAmount;
-//var delegate<@NULL> __EventBoostAmountChanged__Delegate;
+//var delegate<EventBoostAmountChanged> __EventBoostAmountChanged__Delegate;
 
 simulated event ReplicatedEvent(name VarName)
 {

@@ -13,12 +13,15 @@ var protectedwrite transient bool OnlinePlayer;
 
 function OnCreated()
 {
-  
+    OnlinePlayer = class'OnlineGame_X'.static.GetInstance().CreateOnlinePlayer(self);
+    //return;    
 }
 
 function OnRemoved()
 {
-   
+    class'AkDevice'.static.RemoveListener(self);
+    class'OnlineGame_X'.static.GetInstance().RemoveOnlinePlayer(self);
+    //return;    
 }
 
 event NotifyServerConnectionOpen()

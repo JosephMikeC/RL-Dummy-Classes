@@ -1,0 +1,1 @@
+class BTDeco_Success extends BTDecorator;

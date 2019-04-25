@@ -10,35 +10,35 @@ class CarPreviewActor_TA extends Actor
 
 var() int ControllerId;
 var() export editinline ProductLoader_TA ProductLoader;
-var() export editinline CarMeshComponent_TA CarMesh
-var() export editinline LightEnvironmentComponent LightEnvironment
-var() export editinline SilhouetteComponent CarMeshSilhouette
-var() export editinline array<CarPreviewAnim_TA> AttachmentPreviewAnims
-var() export editinline array<CarPreviewAnim_TA> WheelAnims
-var() export editinline CarPreviewAnim_TA BodyAnim
-var() export editinline CarPreviewAnim_TA EngineAudioAnim
-var export editinline CarPreviewAnim_TA EngineAudioAnimInstance
-var() float  SupersonicFakeSpeed
-var() TurnTableActor_TA TurntableActor
-var transient LoadoutData Loadout
-var transient LoadoutData OldLoadout
-var transient array<ProductAsset_TA> PreviewProducts
-var transient FXActor_Boost_TA BoostFX
-var transient ProductSlot_TA PreviewSlot
-var transient Team_TA TeamArchetype
-var string PlayerName
-var transient FXActor_X BodyFX
-var transient ProductAsset_Boost_TA BoostAsset
-var transient ProductAsset_SupersonicTrail_TA SupersonicAsset
-var transient bool bLockLoadout
-var transient bool bSpinWheelsFromBoost
-var bool bAddToCarPreviewList
-var transient array<FXActor_TA> SupersonicFX
-var transient ProductAsset_EngineAudio_TA EngineAudioAsset
-var transient EngineAudioPreviewBase_TA EngineAudioPreview
-var transient MusicStingersPreview_TA MusicStingersPreview
-var() int LinkedControllerId
-var export editinline AkParamGroup Ak
+var() export editinline CarMeshComponent_TA CarMesh;
+var() export editinline LightEnvironmentComponent LightEnvironment;
+var() export editinline SilhouetteComponent CarMeshSilhouette;
+var() export editinline array<CarPreviewAnim_TA> AttachmentPreviewAnims;
+var() export editinline array<CarPreviewAnim_TA> WheelAnims;
+var() export editinline CarPreviewAnim_TA BodyAnim;
+var() export editinline CarPreviewAnim_TA EngineAudioAnim;
+var export editinline CarPreviewAnim_TA EngineAudioAnimInstance;
+var() float  SupersonicFakeSpeed;
+var() TurnTableActor_TA TurntableActor;
+var transient LoadoutData Loadout;
+var transient LoadoutData OldLoadout;
+var transient array<ProductAsset_TA> PreviewProducts;
+var transient FXActor_Boost_TA BoostFX;
+var transient ProductSlot_TA PreviewSlot;
+var transient Team_TA TeamArchetype;
+var string PlayerName;
+var transient FXActor_X BodyFX;
+var transient ProductAsset_Boost_TA BoostAsset;
+var transient ProductAsset_SupersonicTrail_TA SupersonicAsset;
+var transient bool bLockLoadout;
+var transient bool bSpinWheelsFromBoost;
+var bool bAddToCarPreviewList;
+var transient array<FXActor_TA> SupersonicFX;
+var transient ProductAsset_EngineAudio_TA EngineAudioAsset;
+var transient EngineAudioPreviewBase_TA EngineAudioPreview;
+var transient MusicStingersPreview_TA MusicStingersPreview;
+var() int LinkedControllerId;
+var export editinline AkParamGroup Ak;
 
 // Don't have the correct types, possibly are references to Event functions for this class?
 /**
@@ -46,62 +46,59 @@ var ScriptDelegate __EventInitializeComponents__Delegate;
 var ScriptDelegate __ProductApplicatorDelegate__Delegate;
 */
 
-// A lot of types are missing
-/**
-void __CarPreviewActor_TA__PostBeginPlay (CarMeshComponentBase_TA _) {}
-void AddSilhouetteParents () {}
-void RefreshSilhouette () {}
-void ShowSilhouette (bool bShow) {}
-void RefreshLoadout (Profile_TA Profile) {}
-int GetTeamIndex (Profile_TA Profile) {}
-void SetTeamIndex (Profile_TA Profile, int TeamIndex) {}
-LoadoutSet_TA GetLoadoutSet (Profile_TA Profile) {}
-void SetLoadoutSet (LoadoutSet_TA InLoadoutSet, int InTeamIndex) {}
-void EnableTick (bool bEnable) {}
-void DestroyTurnTableActor () {}
-void ResetColors () {}
-void SetLockLoadout (bool bInLock) {}
-void BuildOnlineLoadout (LoadoutData InLoadout, ClientLoadoutOnlineData OnlineLoadout) {}
-void UpdateParticlesFakeVelocity () {}
-FRotator GetSMRotation () {}
-void SetSMRotation (float DeltaTime, float YawInput, bool bGamepad) {}
-void ApplyTurntableBase () {}
-void SetTurnTableActor (TurnTableActor_TA InTurnTableActor, Rotator StartRotation) {}
-void FindTurnTableActor () {}
-void eventOnOwnerChanged () {}
-void Tick (float DeltaTime) {}
-void SetPreviewHidden (bool bHide) {}
-void SetPlayerName (string InPlayerName) {}
-void AnimateBody () {}
-void AnimateWheels () {}
-void AnimateAttachment (ProductSlot_TA Slot, PrimitiveComponent AttachmentComponent, Name CustomAnimName) {}
-void AnimateAntenna (AntennaComponent_TA AntennaArchetype) {}
-PrimitiveComponent FindAttachmentComponent (ProductSlot_TA Slot, ProductAttachment AttachStruct) {}
-void AnimateSlotChange (ProductAsset_TA Product) {}
-ActorComponent FindAttachmentByArchetype (ActorComponent InArchetype) {}
-StaticMeshComponent FindSMAttachmentByAsset (StaticMesh Mesh) {}
-SkeletalMeshComponent FindSKAttachmentByAsset (SkeletalMesh Mesh) {}
-void UpdateTranslations () {}
-void ClearBodyFX () {}
-void ClearBoostFX () {}
-void ClearComponents () {}
-void InitMusicStingers () {}
-void InitSupersonicFX () {}
-void InitEngineAudioFX () {}
-void InitBoostFX () {}
-void InitBodyFX () {}
-void InitComponents () {}
-void HandleAllProductsLoaded (ProductLoader_TA Loader) {}
-void SetBoostGlow (float Glow) {}
-void UpdateBoostGlow () {}
-void DeactivatePreviewSlot () {}
-void ActivatePreviewSlot () {}
-void SetPreviewSlot (ProductSlot_TA InSlot) {}
-void ChangeCarPart (int SlotIndex, int ProductID, bool long OnlineID, int TeamPaintIndex) {}
-void ForceSetLoadout (FLoadoutData InLoadout) {}
-void SetLoadout (FLoadoutData InLoadout) {}
-void eventDestroyed () {}
-void eventPostBeginPlay () {}
-void ProductApplicatorDelegate (ProductAsset_TA Asset) {}
+function __CarPreviewActor_TA__PostBeginPlay (CarMeshComponentBase_TA _) {}
+function AddSilhouetteParents () {}
+function RefreshSilhouette () {}
+function ShowSilhouette (bool bShow) {}
+function RefreshLoadout (Profile_TA Profile) {}
+function int GetTeamIndex (Profile_TA Profile) {}
+function SetTeamIndex (Profile_TA Profile, int TeamIndex) {}
+function LoadoutSet_TA GetLoadoutSet (Profile_TA Profile) {}
+function SetLoadoutSet (LoadoutSet_TA InLoadoutSet, int InTeamIndex) {}
+function EnableTick (bool bEnable) {}
+function DestroyTurnTableActor () {}
+function ResetColors () {}
+function SetLockLoadout (bool bInLock) {}
+function BuildOnlineLoadout (LoadoutData InLoadout, ClientLoadoutOnlineData OnlineLoadout) {}
+function UpdateParticlesFakeVelocity () {}
+function Rotator GetSMRotation () {}
+function SetSMRotation (float DeltaTime, float YawInput, bool bGamepad) {}
+function ApplyTurntableBase () {}
+function SetTurnTableActor (TurnTableActor_TA InTurnTableActor, Rotator StartRotation) {}
+function FindTurnTableActor () {}
+event OnOwnerChanged () {}
+function Tick (float DeltaTime) {}
+function SetPreviewHidden (bool bHide) {}
+function SetPlayerName (string InPlayerName) {}
+function AnimateBody () {}
+function AnimateWheels () {}
+function AnimateAttachment (ProductSlot_TA Slot, PrimitiveComponent AttachmentComponent, name CustomAnimName) {}
+function AnimateAntenna (AntennaComponent_TA AntennaArchetype) {}
+function PrimitiveComponent FindAttachmentComponent (ProductSlot_TA Slot, ProductAttachment AttachStruct) {}
+function AnimateSlotChange (ProductAsset_TA Product) {}
+function ActorComponent FindAttachmentByArchetype (ActorComponent InArchetype) {}
+function StaticMeshComponent FindSMAttachmentByAsset (StaticMesh Mesh) {}
+function SkeletalMeshComponent FindSKAttachmentByAsset (SkeletalMesh Mesh) {}
+function UpdateTranslations () {}
+function ClearBodyFX () {}
+function ClearBoostFX () {}
+function ClearComponents () {}
+function InitMusicStingers () {}
+function InitSupersonicFX () {}
+function InitEngineAudioFX () {}
+function InitBoostFX () {}
+function InitBodyFX () {}
+function InitComponents () {}
+function HandleAllProductsLoaded (ProductLoader_TA Loader) {}
+function SetBoostGlow (float Glow) {}
+function UpdateBoostGlow () {}
+function DeactivatePreviewSlot () {}
+function ActivatePreviewSlot () {}
+function SetPreviewSlot (ProductSlot_TA InSlot) {}
+function ChangeCarPart (int SlotIndex, int ProductID, bool long OnlineID, int TeamPaintIndex) {}
+function ForceSetLoadout (LoadoutData InLoadout) {}
+function SetLoadout (LoadoutData InLoadout) {}
+event Destroyed () {}
+event PostBeginPlay () {}
+function ProductApplicatorDelegate (ProductAsset_TA Asset) {}
 event EventInitializeComponents (CarPreviewActor_TA PreviewActor) {}
-*/

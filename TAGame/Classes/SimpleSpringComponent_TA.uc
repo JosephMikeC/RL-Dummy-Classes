@@ -10,10 +10,10 @@ class SimpleSpringComponent_TA extends Component
     editinlinenew;
 
 //var() SimpleSpringSettings Spring;
-var transient Vector Displacement;
-var transient Vector NormalizedDisplacement;
-var transient Vector MassLocation;
-var transient Vector MassVelocity;
+var transient vector Displacement;
+var transient vector NormalizedDisplacement;
+var transient vector MassLocation;
+var transient vector MassVelocity;
 var transient bool bInitialized;
 
 // Export USimpleSpringComponent_TA::execUpdatePrimitive(FFrame&, void* const)
@@ -24,12 +24,12 @@ native function UpdatePrimitive(float DeltaTime, PrimitiveComponent BaseComponen
 }
 
 // Export USimpleSpringComponent_TA::execUpdateSpring(FFrame&, void* const)
-native function UpdateSpring(float DeltaTime, const out Vector BaseLocation, const out Rotator BaseRotation)
+native function UpdateSpring(float DeltaTime, const out vector BaseLocation, const out Rotator BaseRotation)
 {
          
 }
 
-function AddForce(Vector Force)
+function AddForce(vector Force)
 {
  
 }

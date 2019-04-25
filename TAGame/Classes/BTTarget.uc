@@ -11,8 +11,8 @@ class BTTarget extends Object
 /** Actor to get initial data from */
 var() BTProxyType Type;
 /** Local-space offset from actor location (along target rotation) */
-var() Vector LocalOffset;
+var() vector LocalOffset;
 /** World-space offset from actor location */
-var() Vector WorldOffset;
+var() vector WorldOffset;
 /** Only iterate actors that pass these conditions. If any of these conditions fail, the actor will be treated as if he doesn't exist. The condition's context is set to the iterated actor. */
 var() array<BTNode> Filters;

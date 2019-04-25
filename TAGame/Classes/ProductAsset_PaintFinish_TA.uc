@@ -21,4 +21,4 @@ var() float SparkleStrength;
 var() float PearlescentStrength;
 var() const editconst array<editconst TextureParameterValue> TextureParameterValues;
 var() const editconst array<editconst ScalarParameterValue> ScalarParameterValues;
-var() const editconst array<editconst VectorParameterValue> VectorParameterValues;
+var() const editconst array<editconst vectorParameterValue> vectorParameterValues;

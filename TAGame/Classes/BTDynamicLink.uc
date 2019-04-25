@@ -12,7 +12,7 @@ class BTDynamicLink extends BTDecorator
 var() const name LinkName;
 /** If our link is not set, return success instead of failure */
 var() bool bUnlinkedSuccess;
-//var const transient BTNode ChildArchetype;
+var const transient BTNode ChildArchetype;
 
 event Init()
 {

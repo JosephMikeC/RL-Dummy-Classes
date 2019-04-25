@@ -32,10 +32,10 @@ struct native FloatParamPair
     }
 };
 
-struct native VectorParamPair
+struct native vectorParamPair
 {
     var() name Key;
-    var() Vector Value;
+    var() vector Value;
 
     structdefaultproperties
     {
@@ -58,6 +58,6 @@ struct native ColorParamPair
 
 var() privatewrite array<NameParamPair> NameParams;
 var() privatewrite array<FloatParamPair> FloatParams;
-var() privatewrite array<VectorParamPair> VectorParams;
+var() privatewrite array<vectorParamPair> vectorParams;
 var() privatewrite array<ColorParamPair> ColorParams;
 var privatewrite transient array<string> AllComponents;

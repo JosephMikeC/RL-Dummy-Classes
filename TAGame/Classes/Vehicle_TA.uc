@@ -28,8 +28,8 @@ var transient PRI_TA PRI
 var const transient int VehicleUpdateTag
 //var() BallInteractionSettings BallInteraction
 //var CarInteractionData CarInteraction
-var const transient Vector LocalCollisionOffset
-var const transient Vector LocalCollisionExtent
+var const transient vector LocalCollisionOffset
+var const transient vector LocalCollisionExtent
 var transient int LastBallTouchFrame
 var transient int LastBallImpactFrame
 var transient CarComponent_Boost_TA BoostComponent

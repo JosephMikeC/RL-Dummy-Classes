@@ -65,7 +65,7 @@ var privatewrite export editinline transient array<export editinline Goal_TA> Go
 /** When to start doing second-by-second countdown before the game is over */
 var() int SecondsRemainingCountdown;
 //var() Message_TA SecondsRemainingMessage;
-var privatewrite transient Vector FieldCenter;
+var privatewrite transient vector FieldCenter;
 var privatewrite repnotify transient Team_TA GameWinner;
 var privatewrite repnotify transient Team_TA MatchWinner;
 //var privatewrite transient PRI_TA MVP;

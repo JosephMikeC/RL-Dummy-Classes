@@ -8,11 +8,11 @@
 class PlayerController_X extends PlayerController
     native;
 
-var() Qword CameraArchetype;
+var() Camera_X CameraArchetype;
 var() bool HUDArchetype;
 //var private transient GetUtcTimeInSeconds OldPawnReference;
 //var transient GetUtcTimeInSeconds LockedDebugActor;
-//var transient class LastPRI;
+var transient PRI_X LastPRI;
 var private transient float LastNotifyTypingTime;
 var private transient bool bPausedForExternalUI;
 /**

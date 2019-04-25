@@ -11,11 +11,11 @@ class Pylon_Soccar_TA extends Pylon
 /** Direction the field is facing */
 var() Rotator FieldOrientation;
 /** Size of the field (in FieldOriention space) */
-var() Vector FieldSize;
+var() vector FieldSize;
 /** Half size of the field (in FieldOriention space) */
-var() Vector FieldExtent;
+var() vector FieldExtent;
 /** Floating center of field */
-var() Vector FieldCenter;
+var() vector FieldCenter;
 /** Goals contained in this field */
 var() editconst export editinline array<editconst export editinline Goal_TA> Goals;
 /** PlayerStarts contained in this field */
@@ -36,8 +36,8 @@ defaultproperties
 	Goals.Add(Goal_TA_1)
 }
 
-final function Vector ClampToField(Vector V)
+final function vector ClampToField(vector V)
 {
-	local Vector LocalOffset;
+	local vector LocalOffset;
 	//Return
 }
