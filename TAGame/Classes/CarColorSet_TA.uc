@@ -5,7 +5,7 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class CarColorSet_TA extends ColorPalette_X
+class CarColorSet_TA extends Object
     native;
 
 /** Grayscale values to include */
@@ -15,7 +15,8 @@ var() editoronly array<editoronly LinearColor> H;
 /** Brightness + Saturation pairs */
 var() editoronly array<editoronly LinearColor> SV;
 var() LinearColor ColorBlindColor;
-var() const array<DebugColor> DebugColors;
+// TODO
+//var() const array<DebugColor> DebugColors;
 var() float MinStadiumBrightness;
 
 // I don't have the following in my references

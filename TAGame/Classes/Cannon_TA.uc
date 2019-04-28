@@ -24,4 +24,4 @@ function DoSimulatedFire() {}
 function PlayFullBodyAnim (name AnimName, optional float Rate, optional float BlendIn, optional float BlendOut, optional bool bLoop) {}
 function SetPitch (float InPitch) {}
 event PostBeginPlay() {}
-native final function ReplicatedEvent (name VarName) {}
+//native final function ReplicatedEvent (name VarName);

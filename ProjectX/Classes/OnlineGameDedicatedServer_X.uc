@@ -8,7 +8,7 @@
  class OnlineGameDedicatedServer_X extends OnlineGame_Base_X
  native;
 
- // Haven't added class yet.
+ // TODO
 //var transient OnlineGameStats_X GameStats;
 var() OnlineGameDedicatedServerRegistration_X Registration;
 var() OnlineGameReservations_X Reservations;

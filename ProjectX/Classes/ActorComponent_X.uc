@@ -7,3 +7,6 @@
  *******************************************************************************/
 class ActorComponent_X extends ActorComponent
 native;
+
+var bool bTick;
+var const transient bool bIgnoreScriptAttach;

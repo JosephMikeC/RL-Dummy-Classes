@@ -12,13 +12,13 @@
 var() string OnlineSubPlayerInterfaceName;
 var() string OnlineSubGameInterfaceName;
 /** Default game settings archetpe that all game   settings archetypes should inherit from Should specify all possible GameSettingCategories, but not set any This will eventually be used to drive the UI to show which options are available */
-// Haven't added class yet.
+// TODO
 //var() OnlineGameSettings_X DefaultGameSettingsArchetype;
 var transient bool GameSettings;
 /** Each game can only have one lobby active at a time In the case where the host of a party tries to connect to a server the Host lobby will stay up until the client lobby has successfully taken overvar transient OnlineGameLobby_X                                                    Lobby; Playlist manager that handles downloading playlists from the server */
 //var() GetAPlayerController Playlists;
 /** Analytics manager that handles uploading any game      info for tracking */
-// Haven't added class yet.
+// TODO
 //var() OnlineGameAnalytics_X Analytics;
 //var OnlineImageDownloaderWeb_X ImageDownloader;
 //var privatewrite transient OnlineGameDLC_X DLC;

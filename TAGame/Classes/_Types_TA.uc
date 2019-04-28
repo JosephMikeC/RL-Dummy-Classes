@@ -215,12 +215,11 @@ struct SeasonPlayerStat
 {
     /** Players Index */
     var databinding int PlayerIndex;
-    /** Players Index// Stat Name
- */
+
+    // Stat Name
     var databinding string StatName;
-    /** Players Index// Stat Name
-// Stat Value
- */
+
+    // Stat Value
     var databinding int StatValue;
 
    
@@ -230,12 +229,11 @@ struct SeasonTeam
 {
     /** Team's name */
     var databinding string Name;
-    /** Team's name// Team's logo (name of logo asset, not texture path)
- */
+    
+    // Team's logo (name of logo asset, not texture path)
     var databinding name LogoAsset;
-    /** Team's name// Team's logo (name of logo asset, not texture path)
-// Week when this team got eliminated from playoffs
- */
+    
+    // Week when this team got eliminated from playoffs
     var databinding int EliminationWeek;
 
 };
@@ -244,24 +242,15 @@ struct SeasonMatch
 {
     /** Which week this match will take place */
     var databinding int Week;
-    /** Which week this match will take place// The two teams playing in this match. -1 if not determined yet
- */
+    // The two teams playing in this match. -1 if not determined yet
     var databinding int Team0;
-    /** Which week this match will take place// The two teams playing in this match. -1 if not determined yet
- */
     var databinding int Team1;
-    /** Which week this match will take place// The two teams playing in this match. -1 if not determined yet
-// Final score of the match. 0 if not played yet.
- */
+
+    // Final score of the match. 0 if not played yet.
     var databinding int Score0;
-    /** Which week this match will take place// The two teams playing in this match. -1 if not determined yet
-// Final score of the match. 0 if not played yet.
- */
     var databinding int Score1;
-    /** Which week this match will take place// The two teams playing in this match. -1 if not determined yet
-// Final score of the match. 0 if not played yet.
-// Who won this match. -1 if it hasn't been played yet.
- */
+
+    // Who won this match. -1 if it hasn't been played yet.
     var databinding int Winner;
     var bool bBye;
 
@@ -279,8 +268,7 @@ struct CycleButtonItem
 {
     /** Value to display to user */
     var() string Label;
-    /** Value to display to user// Value used internally
- */
+    // Value used internally
     var() string Value;
 
 };
@@ -304,38 +292,17 @@ struct native StoredProductData
 {
     /** Product data stored on disk. Avoid direct object references to speed up loading and GC ProductSlot we belong to */
     var() int SlotIndex;
-    /** Product data stored on disk. Avoid direct object references to speed up loading and GC ProductSlot we belong to// name of the asset
- */
+    // name of the asset
     var() name Name;
-    /** Product data stored on disk. Avoid direct object references to speed up loading and GC ProductSlot we belong to// name of the asset
-// This product must be equipped for us to be equipped
- */
+    // This product must be equipped for us to be equipped
     var() int RequiredProductID;
-    /** Product data stored on disk. Avoid direct object references to speed up loading and GC ProductSlot we belong to// name of the asset
-// This product must be equipped for us to be equipped
-// The pack we belong to
- */
+    // The pack we belong to
     var() int PackID;
-    /** Product data stored on disk. Avoid direct object references to speed up loading and GC ProductSlot we belong to// name of the asset
-// This product must be equipped for us to be equipped
-// The pack we belong to
-// How we get unlocked
- */
-    var() _Types_TA.EUnlockMethod UnlockMethod;
-    /** Product data stored on disk. Avoid direct object references to speed up loading and GC ProductSlot we belong to// name of the asset
-// This product must be equipped for us to be equipped
-// The pack we belong to
-// How we get unlocked
-// Cook for public builds
- */
+    // How we get unlocked
+    var() EUnlockMethod UnlockMethod;
+    // Cook for public builds
     var() bool bPublic;
-    /** Product data stored on disk. Avoid direct object references to speed up loading and GC ProductSlot we belong to// name of the asset
-// This product must be equipped for us to be equipped
-// The pack we belong to
-// How we get unlocked
-// Cook for public builds
-// This is a pack(folder) of products
- */
+    // This is a pack(folder) of products
     var() bool bPack;
     var bool bReplaced;
     var bool bDedicatedServerRelevant;
@@ -348,7 +315,7 @@ struct native ProductData
     var() ProductSlot_TA Slot;
     var() name Name;
     var() int RequiredProductID;
-    var() _Types_TA.EUnlockMethod UnlockMethod;
+    var() EUnlockMethod UnlockMethod;
     var() bool bIsPack;
 
 };
@@ -362,8 +329,8 @@ struct native RandomRange
 
 struct TutorialScoreInfo
 {
-    var _Types_TA.ETutorialType TutorialType;
-    var _Types_TA.EDifficulty Difficulty;
+    var ETutorialType TutorialType;
+    var EDifficulty Difficulty;
     var int Score;
     var int Redos;
 
@@ -377,7 +344,7 @@ struct native CarModSet
 
 struct native CarModPair
 {
-    var _Types_TA.ECarMod Mod;
+    var ECarMod Mod;
     var float Value;
 };
 
@@ -466,23 +433,18 @@ struct native BallHitInfo
         bDodging=false
         bWheelsTouching=false
     }
-
-    
 };
 
 struct TAPlayerStat
 {
     var StatEvent_TA StatEvent;
-    var int Count;
-
-    
+    var int Count;    
 };
 
 struct StatValue
 {
     var name Id;
     var int Values[ETAStatType];
-
 };
 
 struct native AccumulatedRigidBodyCollision
@@ -500,8 +462,6 @@ struct native AccumulatedRigidBodyCollision
     var vector FrictionVelocity;
     var int NumCollisions;
     var int NumContacts;
-
-   
 };
 
 struct native ProductAttachment
@@ -511,11 +471,9 @@ struct native ProductAttachment
     var() MaterialInterface Material;
     var() float Scale;
     var() vector Translation;
-    var() _Types_TA.EProductAttachmentSocket Socket;
+    var() EProductAttachmentSocket Socket;
     var() export editinline AntennaComponent_TA Antenna;
     var() editinline array<editinline AttachmentBehavior_TA> Behaviors;
-
-  
 };
 
 struct native WheelContactData
@@ -530,8 +488,6 @@ struct native WheelContactData
     var vector LatDirection;
     var vector LongDirection;
     var PhysicalMaterialProperty_TA PhysMatProp;
-
-  
 };
 
 struct native SimpleSpringSettings
@@ -544,7 +500,6 @@ struct native SimpleSpringSettings
     var() float MaxSpeed;
     var(Debug) bool bDebug;
     var(Debug) float DrawDebugOffset;
-
 };
 
 struct UIProductSlotData
@@ -552,24 +507,21 @@ struct UIProductSlotData
     var() ProductSlot_TA Slot;
     var() Texture2D Texture;
     var() AkSoundCue Sound;
-
 };
 
 struct UICarModData
 {
-    var() _Types_TA.ECarMod Mod;
+    var() ECarMod Mod;
     var() string Name;
     var() float MaxValue;
-
-  
 };
 
 struct SimilarLogoGroup
 {
     var() array<ProductAsset_Logo_TA> SimilarLogoColorAssets;
-
 };
 
+/*
 var delegate<ProductLoadedDelegate> __ProductLoadedDelegate__Delegate;
 
 private final delegate ProductLoadedDelegate(int ProductID, ProductAsset_TA Product)
@@ -589,3 +541,4 @@ native static final function float UpdateInputValue(InputRate Rate, float Desire
     //native.OldValue;
     //native.DeltaTime;        
 }
+*/

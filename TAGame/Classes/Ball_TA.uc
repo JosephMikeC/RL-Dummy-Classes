@@ -27,8 +27,8 @@ var() export editinline StaticMeshComponent StaticMesh;
 var() FXActor_X EndOfGameFXArchetype;
 /** explosion to spawn */
 // Commented out as we do not have the class
-//var() Explosion_X ExplosionArchetype;
-//var() Explosion_X NoGoalExplosionArchetype;
+var() Explosion_X ExplosionArchetype;
+var() Explosion_X NoGoalExplosionArchetype;
 var() bool bAllowPlayerExplosionOverride;
 var transient bool bNotifyGroundHit;
 var privatewrite repnotify transient bool bEndOfGameHidden;
@@ -60,9 +60,9 @@ var privatewrite repnotify PhysicalMaterial ReplicatedPhysMatOverride;
 var privatewrite transient byte HitTeamNum;
 var privatewrite repnotify transient GameEvent_Soccar_TA GameEvent;
 var privatewrite repnotify transient ExplosionData ReplicatedExplosionData;
-var privatewrite repnotify transient ExplosionDataExtended ReplicatedExplosionDataExtended;
+//var privatewrite repnotify transient ExplosionDataExtended ReplicatedExplosionDataExtended;
 // Missing class
-//var privatewrite transient Explosion_X Explosion;
+var privatewrite transient Explosion_X Explosion;
 var privatewrite transient float ExplosionTime;
 var privatewrite transient vector OldLocation;
 // This property is not present in my files.
@@ -72,11 +72,12 @@ var MaterialInterface FadeMaterial;
 var() float PredictionTimestep;
 //var const transient array<PredictedPosition> PredictedPositions;
 var const transient float LastPredictionTime;
-var privatewrite transient GoalPenetrationData GoalPenetration;
+//var privatewrite transient GoalPenetrationData GoalPenetration;
 var() float GroundForce;
 var transient Car_TA CurrentAffector;
-var export editinline Ball_TrajectoryComponent_TA TrajectoryComponent;
-var const export editinline PitchTekDrawingComponent PitchTekComponent;
+// TODO
+//var export editinline Ball_TrajectoryComponent_TA TrajectoryComponent;
+var const export editinline PitchTekDrawingComponent_TA PitchTekComponent;
 
 // Don't have the correct types, possibly are references to Event functions for this class?
 /**

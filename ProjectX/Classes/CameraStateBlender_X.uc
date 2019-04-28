@@ -10,9 +10,9 @@
 struct CameraTransition
 {
  var CameraState_X CameraState;
- var AnimNodeBlendList BlendParams;
+ var ViewTargetTransitionParams BlendParams;
  var float RemainingTime;
- var Camera_X SnapshotPOV;
+ var CameraOrientation SnapshotPOV;
  var bool bStarted;
 
  structdefaultproperties
@@ -26,7 +26,7 @@ struct CameraTransition
 };
 
 var privatewrite transient CameraTransition Transition;
-var private transient vector TransitionDelta;
+var private transient CameraOrientation TransitionDelta;
 var privatewrite transient CameraState_X CameraState;
 
 function Snap()
@@ -101,9 +101,9 @@ protected function ClearTransition()
 
 protected function ClearTransitionDelta()
 {
- local Orientation EmptyOrientation;
+ local CameraTransition EmptyOrientation;
 
- TransitionDelta = EmptyOrientation;
+ //TransitionDelta = EmptyOrientation;
  //return;    
 }
 
@@ -146,7 +146,7 @@ function Tick(float DeltaTime)
  //return;    
 }
 
-function UpdatePOV(float DeltaTime, CameraState_X OutPOV)
+function UpdatePOV(float DeltaTime, CameraOrientation OutPOV)
 {
  // End:0x45
  if(Transition.RemainingTime > 0.0)
@@ -159,13 +159,13 @@ function UpdatePOV(float DeltaTime, CameraState_X OutPOV)
      // End:0x85
      if(CameraState != none)
      {
-         CameraState.UpdatePOV(DeltaTime, OutPOV);
+         //CameraState.UpdatesPOV(DeltaTime, OutPOV);
      }
  }
  //return;    
 }
 
-function PostProcessPOV(float DeltaTime, CameraState_X OutPOV)
+function PostProcessPOV(float DeltaTime, CameraOrientation OutPOV)
 {
  // End:0x10F
  if(Transition.RemainingTime > 0.0)
@@ -178,7 +178,7 @@ function PostProcessPOV(float DeltaTime, CameraState_X OutPOV)
  //return;    
 }
 
-protected function BlendCameraState(CameraState_X OutPOV, float DeltaTime)
+protected function BlendCameraState(CameraOrientation OutPOV, float DeltaTime)
 {
  local float BlendPct;
 

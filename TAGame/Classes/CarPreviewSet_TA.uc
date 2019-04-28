@@ -1,12 +1,13 @@
 class CarPreviewSet_TA extends Object;
 
-var transient array<CarPreviewActor_TA> CarPPreviewActors;
-var transient OnlineGameParty_TA;
+var transient array<CarPreviewActor_TA> CarPreviewActors;
+// TODO
+//var transient OnlineGameParty_TA OnlineParty;
 var transient bool bRemotePlayersHidden;
 var const int MaxCars;
-var delegate<EventPreviewActorsChanged> __EventPreviewActorsChanged__Delegate;
-var delegate<EventPreviewActorSetProfile> __EventPreviewActorSetProfile__Delegate;
-var delegate<EventSwapFinished> __EventSwapFinished__Delegate;
+//var delegate<EventPreviewActorsChanged> __EventPreviewActorsChanged__Delegate;
+//var delegate<EventPreviewActorSetProfile> __EventPreviewActorSetProfile__Delegate;
+//var delegate<EventSwapFinished> __EventSwapFinished__Delegate;
 
 function bool SetRemotePlayersHidden (bool bHidden) {}
 function HandlePrimaryPlayerSet (PlayerController_Menu_TA PC) {}

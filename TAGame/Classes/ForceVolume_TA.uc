@@ -8,7 +8,7 @@ var() float ConstantForce;
 var() float EnterForce;
 var() Actor CustomForceDirection;
 
-event eventUnTouch (Actor Other) {}
-vector GetForceDirection (RBActor_TA RB) {}
-event eventTouch (Actor OTher, PrimitiveComponent OtherComponent, vector HitLocation, vector HitNormal) {}
-event eventPrePhysicsStep (float DeltaTime) {}
+event UnTouch (Actor Other) {}
+function vector GetForceDirection (RBActor_TA RB) {}
+event Touch (Actor OTher, PrimitiveComponent OtherComponent, vector HitLocation, vector HitNormal) {}
+event PrePhysicsStep (float DeltaTime) {}

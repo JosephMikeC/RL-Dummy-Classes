@@ -5,4 +5,642 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class PostProcessManager_X extends Object;
+ class PostProcessManager_X extends Object;
+
+struct PostProcessOverride
+{
+ var PostProcessSettings Settings;
+ var PostProcessVolume Volume;
+ var name Id;
+ var float BlendInTime;
+ var float BlendOutTime;
+ var transient bool bEnabled;
+ /** Settings that can be manually-defined in XML Post process volume archetype that artists can define - overrides Settings unique ID for this settings How long to take when starting and stopping the settings whether this setting is currently enabled - runtime only whether this setting is currently enabled by default */
+ var() bool bDefaultEnabled;
+
+ structdefaultproperties
+ {
+     Settings=(bOverride_EnableBloom=true,bOverride_EnableDOF=true,bOverride_EnableMotionBlur=true,bOverride_EnableSceneEffect=true,bOverride_AllowAmbientOcclusion=true,bOverride_OverrideRimShaderColor=true,bOverride_Bloom_Scale=true,bOverride_Bloom_Threshold=true,bOverride_Bloom_Tint=true,bOverride_Bloom_ScreenBlendThreshold=true,bOverride_Bloom_InterpolationDuration=true,bOverride_DOF_FalloffExponent=true,bOverride_DOF_BlurKernelSize=true,bOverride_DOF_BlurBloomKernelSize=true,bOverride_DOF_MaxNearBlurAmount=true,bOverride_DOF_MinBlurAmount=false,bOverride_DOF_MaxFarBlurAmount=true,bOverride_DOF_FocusType=true,bOverride_DOF_FocusInnerRadius=true,bOverride_DOF_FocusDistance=true,bOverride_DOF_FocusPosition=true,bOverride_DOF_InterpolationDuration=true,bOverride_DOF_BokehTexture=false,bOverride_MotionBlur_MaxVelocity=false,bOverride_MotionBlur_Amount=false,bOverride_MotionBlur_FullMotionBlur=false,bOverride_MotionBlur_CameraRotationThreshold=false,bOverride_MotionBlur_CameraTranslationThreshold=false,bOverride_MotionBlur_InterpolationDuration=false,bOverride_Scene_Desaturation=true,bOverride_Scene_Colorize=false,bOverride_Scene_TonemapperScale=false,bOverride_Scene_ImageGrainScale=false,bOverride_Scene_HighLights=true,bOverride_Scene_MidTones=true,bOverride_Scene_Shadows=true,bOverride_Scene_InterpolationDuration=true,bOverride_Scene_ColorGradingLUT=false,bOverride_RimShader_Color=true,bOverride_RimShader_InterpolationDuration=true,bOverride_MobileColorGrading=false,bEnableBloom=true,bEnableDOF=false,bEnableMotionBlur=true,bEnableSceneEffect=true,bAllowAmbientOcclusion=true,bOverrideRimShaderColor=false,Bloom_Scale=1.0,Bloom_Threshold=1.0,Bloom_Tint=(R=255,G=255,B=255,A=0),Bloom_ScreenBlendThreshold=10.0,Bloom_InterpolationDuration=1.0,DOF_BlurBloomKernelSize=16.0,DOF_FalloffExponent=4.0,DOF_BlurKernelSize=16.0,DOF_MaxNearBlurAmount=1.0,DOF_MinBlurAmount=0.0,DOF_MaxFarBlurAmount=1.0,DOF_FocusType=EFocusType.FOCUS_Distance,DOF_FocusInnerRadius=2000.0,DOF_FocusDistance=0.0,DOF_FocusPosition=(X=0.0,Y=0.0,Z=0.0),DOF_InterpolationDuration=1.0,DOF_BokehTexture=none,MotionBlur_MaxVelocity=1.0,MotionBlur_Amount=0.50,MotionBlur_FullMotionBlur=true,MotionBlur_CameraRotationThreshold=45.0,MotionBlur_CameraTranslationThreshold=10000.0,MotionBlur_InterpolationDuration=1.0,Scene_Desaturation=0.0,Scene_Colorize=(X=1.0,Y=1.0,Z=1.0),Scene_TonemapperScale=1.0,Scene_ImageGrainScale=0.0,Scene_HighLights=(X=1.0,Y=1.0,Z=1.0),Scene_MidTones=(X=1.0,Y=1.0,Z=1.0),Scene_Shadows=(X=0.0,Y=0.0,Z=0.0),Scene_InterpolationDuration=1.0,RimShader_Color=(R=0.8277260,G=0.5859730,B=0.470440,A=1.0),RimShader_InterpolationDuration=1.0,ColorGrading_LookupTable=none,ColorGradingLUT=(LUTTextures=none,LUTWeights=none),MobileColorGrading=(TransitionTime=1.0,Blend=0.0,Desaturation=0.0,HighLights=(R=0.70,G=0.70,B=0.70,A=1.0),MidTones=(R=0.0,G=0.0,B=0.0,A=1.0),Shadows=(R=0.0,G=0.0,B=0.0,A=1.0)),MobilePostProcess=(bOverride_Mobile_BlurAmount=false,bOverride_Mobile_TransitionTime=false,bOverride_Mobile_Bloom_Scale=false,bOverride_Mobile_Bloom_Threshold=false,bOverride_Mobile_Bloom_Tint=false,bOverride_Mobile_DOF_Distance=false,bOverride_Mobile_DOF_MinRange=false,bOverride_Mobile_DOF_MaxRange=false,bOverride_Mobile_DOF_FarBlurFactor=false,Mobile_BlurAmount=16.0,Mobile_TransitionTime=1.0,Mobile_Bloom_Scale=0.50,Mobile_Bloom_Threshold=0.750,Mobile_Bloom_Tint=(R=1.0,G=1.0,B=1.0,A=1.0),Mobile_DOF_Distance=1500.0,Mobile_DOF_MinRange=600.0,Mobile_DOF_MaxRange=1200.0,Mobile_DOF_FarBlurFactor=1.0))
+     Volume=none
+     Id=None
+     BlendInTime=0.50
+     BlendOutTime=0.50
+     bEnabled=false
+     bDefaultEnabled=false
+ }
+};
+
+struct PPEffectDefaults
+{
+ var() const name EffectName;
+ var() const bool bEnabled;
+
+ structdefaultproperties
+ {
+     EffectName=None
+     bEnabled=false
+ }
+};
+
+struct PPPersistentEffectDefaults
+{
+ /** the Unique name of this effect, such as 'dying' */
+ var() const name EffectName;
+ /** the Unique name of this effect, such as 'dying' */
+ var() const name MaterialEffectName;
+ /** the name of the MaterialEffect this effect acts upon */
+ var() const name MaterialParamName;
+ /** the name of the material parameter we are modifying */
+ var() const float DefaultValue;
+
+ structdefaultproperties
+ {
+     EffectName=None
+     MaterialEffectName=None
+     MaterialParamName=None
+     DefaultValue=0.0
+ }
+};
+
+struct PPChainInfo
+{
+ /** The handle for the chain, I think this will be the best way to access it, but the index might be useful as well this will be used to remove the chain */
+ var() name ChainName;
+ var() PostProcessChain ChainReference;
+
+ structdefaultproperties
+ {
+     ChainName=None
+     ChainReference=none
+ }
+};
+
+var protectedwrite transient LocalPlayer PlayerOwner;
+var protected transient array<PPEffectDefaults> ActiveEffects;
+var protected export editinline string TickComponent;
+var protected transient bool bNeedsReset;
+var() protected array<PPEffectDefaults> EffectDefaults;
+var() protected array<PPPersistentEffectDefaults> PersistentEffectDefaults;
+var protected transient array<PPChainInfo> ActiveChains;
+var() protected array<string> ChainDefaults;
+/** array of possible PP overrides, ordered by priority */
+var() protectedwrite array<float> PostProcessOverrides;
+
+/*
+function Init(GetDefaultObject NewOwner)
+{
+ local int I;
+
+ I = 0;
+ J0x0B:
+ // End:0xBF [Loop If]
+ if(I < PostProcessOverrides.Length)
+ {
+     // End:0xB1
+     if(PostProcessOverrides[I].Volume != none)
+     {
+         PostProcessOverrides[I].Settings = PostProcessOverrides[I].Volume.Settings;
+     }
+     ++ I;
+     // [Loop Continue]
+     goto J0x0B;
+ }
+ PlayerOwner = LocalPlayer(NewOwner.Player);
+ ResetEffectsToDefaults(true);
+ //return;    
+}
+
+simulated function Exit()
+{
+ ResetEffectsToDefaults();
+ PlayerOwner = none;
+ TickComponent.SetTickable(false);
+ //return;    
+}
+
+simulated function GetAPlayerController GetPlayerChain()
+{
+ return ((PlayerOwner.bForceDefaultPostProcessChain == false) ? PlayerOwner.PlayerPostProcess : PlayerOwner.Outer.GetDefaultPostProcessChain());
+ //return ReturnValue;    
+}
+
+function GetAPlayerController GetUberPostProcessEffect()
+{
+ local int I;
+ local GetAPlayerController PlayerChain, Effect;
+
+ PlayerChain = GetPlayerChain();
+ // End:0xBD
+ if(PlayerChain != none)
+ {
+     I = 0;
+     J0x2E:
+     // End:0xBD [Loop If]
+     if(I < PlayerChain.Effects.Length)
+     {
+         Effect = UberPostProcessEffect(PlayerChain.Effects[I]);
+         // End:0xAF
+         if(Effect != none)
+         {
+             return Effect;
+         }
+         ++ I;
+         // [Loop Continue]
+         goto J0x2E;
+     }
+ }
+ return none;
+ //return ReturnValue;    
+}
+
+simulated function PrintDebugInfo(GetAPlayerController Drawer)
+{
+ local int I, DefaultIndex;
+ local GetAPlayerController PlayerChain, Effect;
+ local GetDefaultObject Effect_X;
+
+ PlayerChain = GetPlayerChain();
+ super.PrintDebugInfo(Drawer);
+ // End:0x83
+ if(bNeedsReset)
+ {
+     Drawer.PrintText("- bNeedsReset: " $ string(bNeedsReset), MakeColor(1, 0, 0));
+ }
+ // End:0x135
+ if((PlayerChain == none) || PlayerOwner.bForceDefaultPostProcessChain)
+ {
+     Drawer.PrintText("- PlayerChain:" @ string(((PlayerChain != none) ? PlayerChain.ObjectArchetype : PlayerChain)), MakeColor(255, 96, 96));
+ }
+ // End:0x16C
+ else
+ {
+     Drawer.PrintProperty("PlayerChain", string(PlayerChain));
+ }
+ Drawer.PrintProperty("EffectDefaults", (string(EffectDefaults.Length) @ "/") @ string(PlayerChain.Effects.Length));
+ // End:0x7D3
+ if(PlayerChain != none)
+ {
+     I = 0;
+     J0x1E9:
+     // End:0x7D3 [Loop If]
+     if(I < PlayerChain.Effects.Length)
+     {
+         Effect = MaterialEffect(PlayerChain.Effects[I]);
+         // End:0x65F
+         if(Effect != none)
+         {
+             Effect_X = MaterialEffect_X(Effect);
+             DefaultIndex = EffectDefaults.Find('EffectName', Effect.EffectName);
+             // End:0x4D9
+             if(Effect_X != none)
+             {
+                 // End:0x3F5
+                 if(DefaultIndex > -1)
+                 {
+                     Drawer.PrintProperty(("Effects[" $ string(Effect.EffectName)) $ "]", (((((((string(Effect.bShowInGame) @ "(") @ string(EffectDefaults[DefaultIndex].bEnabled)) @ ")") @ "[") $ string(Effect_X.TimeParamName)) @ string(Effect_X.Stage)) @ string(Effect_X.StageTime)) $ "]");
+                 }
+                 // End:0x4D6
+                 else
+                 {
+                     Drawer.PrintProperty(("Effects[" $ string(Effect.EffectName)) $ "]", ((((string(Effect.bShowInGame) @ "[") $ string(Effect_X.TimeParamName)) @ string(Effect_X.Stage)) @ string(Effect_X.StageTime)) $ "]");
+                 }
+             }
+             // End:0x65C
+             else
+             {
+                 // End:0x5C0
+                 if(DefaultIndex > -1)
+                 {
+                     Drawer.PrintText((((((("- Effects[" $ string(Effect.EffectName)) $ "]:") @ PathName(Effect)) @ string(Effect.bShowInGame)) @ "(") @ string(EffectDefaults[DefaultIndex].bEnabled)) @ ")", MakeColor(96, 96, 96));
+                 }
+                 // End:0x65C
+                 else
+                 {
+                     Drawer.PrintText(((("- Effects[" $ string(Effect.EffectName)) $ "]:") @ PathName(Effect)) @ string(Effect.bShowInGame), MakeColor(96, 96, 96));
+                 }
+             }
+         }
+         // End:0x7C5
+         else
+         {
+             Drawer.PrintText(((((((("- Effects[" $ string(I)) $ "]:") @ string(PlayerChain.Effects[I].Class)) @ PathName(PlayerChain.Effects[I])) @ "bShowInGame:") @ string(PlayerChain.Effects[I].bShowInGame)) @ "EffectName:") @ string(PlayerChain.Effects[I].EffectName), MakeColor(96, 96, 96));
+         }
+         ++ I;
+         // [Loop Continue]
+         goto J0x1E9;
+     }
+ }
+ Drawer.PrintProperty("PlayerPostProcessChains", string(PlayerOwner.PlayerPostProcessChains.Length));
+ Drawer.PrintProperty("ActiveChains", string(ActiveChains.Length));
+ I = 0;
+ J0x870:
+ // End:0xA3E [Loop If]
+ if(I < ActiveChains.Length)
+ {
+     // End:0xA30
+     if(ActiveChains[I].ChainReference != none)
+     {
+         DefaultIndex = ChainDefaults.Find('ChainName', ActiveChains[I].ChainName);
+         // End:0x995
+         if(DefaultIndex > -1)
+         {
+             Drawer.PrintProperty(("ActiveChains[" $ string(ActiveChains[I].ChainName)) $ "]", string(ActiveChains[I].ChainReference));
+         }
+         // End:0xA30
+         else
+         {
+             Drawer.PrintText((("- ActiveChains[" $ string(ActiveChains[I].ChainName)) $ "]:") @ string(ActiveChains[I].ChainReference), MakeColor(96, 96, 96));
+         }
+     }
+     ++ I;
+     // [Loop Continue]
+     goto J0x870;
+ }
+ Drawer.PrintProperty("PersistentEffects", string(PersistentEffectDefaults.Length));
+ I = 0;
+ J0xA87:
+ // End:0xE30 [Loop If]
+ if(I < PersistentEffectDefaults.Length)
+ {
+     Effect_X = GetEffect(PersistentEffectDefaults[I].MaterialEffectName);
+     // End:0xDA7
+     if(Effect_X != none)
+     {
+         // End:0xB2B
+         if(!Effect_X.IsInitialized())
+         {
+             Effect_X.Init();
+         }
+         // End:0xCF7
+         if(Effect_X.MatInst.ScalarParameterValues.Find('ParameterName', PersistentEffectDefaults[I].MaterialParamName) != -1)
+         {
+             Drawer.PrintProperty(("PersistentEffects[" $ string(PersistentEffectDefaults[I].EffectName)) $ "]", string(PersistentEffectDefaults[I].MaterialParamName) @ string(Effect_X.GetMaterialParameterValue(PersistentEffectDefaults[I].MaterialParamName)));
+             // End:0xCF4
+             if(Effect_X.HasAnyEffectsActive())
+             {
+                 Drawer.PrintText("-- ActiveEffects " @ Effect_X.GetActiveEffects(), MakeColor(255, 36, 36));
+             }
+         }
+         // End:0xDA4
+         else
+         {
+             Drawer.PrintText(((("- PersistentEffects[" $ string(PersistentEffectDefaults[I].EffectName)) $ "]:") @ string(PersistentEffectDefaults[I].MaterialParamName)) @ "NOT FOUND", MakeColor(96, 96, 96));
+         }
+     }
+     // End:0xE22
+     else
+     {
+         Drawer.PrintText(("- PersistentEffects[" $ string(PersistentEffectDefaults[I].EffectName)) $ "]: NONE", MakeColor(255, 0, 0));
+     }
+     ++ I;
+     // [Loop Continue]
+     goto J0xA87;
+ }
+ //return;    
+}
+
+function ToggleEffectNamed(name EffectName, bool bEnabled)
+{
+ local GetAPlayerController Effect;
+
+ Effect = GetEffect(EffectName);
+ // End:0x55
+ if(Effect == none)
+ {
+     WarnInternal("Could not find effect:" @ string(EffectName));
+     return;
+ }
+ ToggleEffect(Effect, bEnabled);
+ //return;    
+}
+
+function StartEffectNamed(name EffectName)
+{
+ ToggleEffectNamed(EffectName, true);
+ //return;    
+}
+
+function StopEffectNamed(name EffectName)
+{
+ ToggleEffectNamed(EffectName, false);
+ //return;    
+}
+
+protected function ToggleEffect(GetAPlayerController Effect, bool bEnabled)
+{
+ // End:0x23
+ if(Effect == none)
+ {
+     WarnInternal("Effect is none");
+     return;
+ }
+ // End:0xA8
+ if(bEnabled)
+ {
+     // End:0x86
+     if(ActiveEffects.Find(Effect) == -1)
+     {
+         ActiveEffects.AddItem(Effect);
+         TickComponent.SetTickable(true);
+     }
+     Effect.Start();
+ }
+ // End:0xC7
+ else
+ {
+     Effect.End();
+ }
+ //return;    
+}
+
+function TickPostProcess(float dt)
+{
+ local int I;
+
+ I = ActiveEffects.Length - 1;
+ J0x17:
+ // End:0x80 [Loop If]
+ if(I >= 0)
+ {
+     // End:0x72
+     if(!ActiveEffects[I].Tick(dt))
+     {
+         ActiveEffects.Remove(I, 1);
+     }
+     -- I;
+     // [Loop Continue]
+     goto J0x17;
+ }
+ // End:0xD6
+ if(!TickComponent.default.bTick && ActiveEffects.Length <= 0)
+ {
+     TickComponent.SetTickable(false);
+ }
+ //return;    
+}
+
+final function GetAPlayerController GetEffect(name EffectName)
+{
+ local GetAPlayerController PlayerChain;
+
+ PlayerChain = GetPlayerChain();
+ // End:0x55
+ if(PlayerChain != none)
+ {
+     return MaterialEffect_X(PlayerChain.FindPostProcessEffect(EffectName));
+ }
+ return none;
+ //return ReturnValue;    
+}
+
+simulated function int AddPostProcessChain(GetDefaultObject NewChain, name ChainName)
+{
+ local int ChainIndex;
+
+ ChainIndex = PlayerOwner.PlayerPostProcessChains.Length;
+ // End:0xFA
+ if(PlayerOwner.InsertPostProcessingChain(NewChain, ChainIndex, true))
+ {
+     ActiveChains.Length = Max(ChainIndex + 1, ActiveChains.Length);
+     ActiveChains[ChainIndex].ChainReference = NewChain;
+     ActiveChains[ChainIndex].ChainName = ChainName;
+     bNeedsReset = true;
+     return ChainIndex;
+ }
+ // End:0x12E
+ else
+ {
+     WarnInternal(("Unable to add PP Chain" @ string(NewChain)) @ string(ChainName));
+ }
+ return -1;
+ //return ReturnValue;    
+}
+
+simulated function bool RemovePostProcessChain(int OldChain)
+{
+ bNeedsReset = true;
+ // End:0x4E
+ if(PlayerOwner.RemovePostProcessingChain(OldChain))
+ {
+     ActiveChains.Remove(OldChain, 1);
+     return true;
+ }
+ return false;
+ //return ReturnValue;    
+}
+
+function StartChainNamed(DumpUnreferencedAnims Chain, name ChainName)
+{
+ ToggleChainNamed(Chain, ChainName, true);
+ //return;    
+}
+
+function StopChainNamed(name ChainName)
+{
+ ToggleChainNamed(none, ChainName, false);
+ //return;    
+}
+
+protected function ToggleChainNamed(DumpUnreferencedAnims Chain, name ChainName, bool bEnabled)
+{
+ local int ChainIndex;
+
+ ChainIndex = ActiveChains.Find('ChainName', ChainName);
+ // End:0x68
+ if(bEnabled)
+ {
+     // End:0x65
+     if(ChainIndex == -1)
+     {
+         AddPostProcessChain(Chain, ChainName);
+     }
+ }
+ // End:0x8E
+ else
+ {
+     // End:0x8E
+     if(ChainIndex != -1)
+     {
+         RemovePostProcessChain(ChainIndex);
+     }
+ }
+ // End:0xA6
+ if(bNeedsReset)
+ {
+     ResetEffectsToDefaults();
+ }
+ //return;    
+}
+
+simulated function ResetEffectsToDefaults(optional bool bRebuildPostProcessChains)
+{
+ local GetAPlayerController Effect;
+ local int I, DefaultEffect;
+
+ bRebuildPostProcessChains = false;
+ // End:0x3B4
+ if(PlayerOwner != none)
+ {
+     // End:0x16E
+     if(bRebuildPostProcessChains)
+     {
+         PlayerOwner.RemoveAllPostProcessingChains();
+         ActiveChains.Length = 0;
+         // End:0xE7
+         if(ChainDefaults.Find('ChainReference', PlayerOwner.Outer.GetWorldPostProcessChain()) == -1)
+         {
+             AddPostProcessChain(PlayerOwner.Outer.GetWorldPostProcessChain(), 'World');
+         }
+         I = 0;
+         J0xF2:
+         // End:0x16E [Loop If]
+         if(I < ChainDefaults.Length)
+         {
+             AddPostProcessChain(ChainDefaults[I].ChainReference, ChainDefaults[I].ChainName);
+             ++ I;
+             // [Loop Continue]
+             goto J0xF2;
+         }
+     }
+     I = 0;
+     J0x179:
+     // End:0x222 [Loop If]
+     if(I < EffectDefaults.Length)
+     {
+         Effect = GetEffect(EffectDefaults[I].EffectName);
+         // End:0x214
+         if(Effect != none)
+         {
+             ToggleEffect(Effect, EffectDefaults[I].bEnabled);
+         }
+         ++ I;
+         // [Loop Continue]
+         goto J0x179;
+     }
+     I = 0;
+     J0x22D:
+     // End:0x2A9 [Loop If]
+     if(I < PersistentEffectDefaults.Length)
+     {
+         SetMaterialEffectValue(PersistentEffectDefaults[I].EffectName, PersistentEffectDefaults[I].DefaultValue);
+         ++ I;
+         // [Loop Continue]
+         goto J0x22D;
+     }
+     I = 0;
+     J0x2B4:
+     // End:0x329 [Loop If]
+     if(I < PostProcessOverrides.Length)
+     {
+         PostProcessOverrides[I].bEnabled = PostProcessOverrides[I].bDefaultEnabled;
+         ++ I;
+         // [Loop Continue]
+         goto J0x2B4;
+     }
+     DefaultEffect = GetNextPostProcessOverride();
+     // End:0x384
+     if(DefaultEffect != -1)
+     {
+         TogglePostProcessSettings(PostProcessOverrides[DefaultEffect].Id, true);
+     }
+     // End:0x3A8
+     else
+     {
+         PlayerOwner.ClearPostProcessSettingsOverride(0.10);
+     }
+     bNeedsReset = false;
+ }
+ //return;    
+}
+
+simulated function SetMaterialEffectValue(name EffectName, float NewValue)
+{
+ local GetAPlayerController Effect;
+ local int Index;
+
+ Index = PersistentEffectDefaults.Find('EffectName', EffectName);
+ // End:0x125
+ if(Index != -1)
+ {
+     Effect = GetEffect(PersistentEffectDefaults[Index].MaterialEffectName);
+     // End:0xD6
+     if(Effect != none)
+     {
+         Effect.SetMaterialParameterValue(PersistentEffectDefaults[Index].MaterialParamName, NewValue);
+     }
+     // End:0x122
+     else
+     {
+         WarnInternal("Could not find MaterialEffect:" @ string(PersistentEffectDefaults[Index].MaterialEffectName));
+     }
+ }
+ // End:0x15E
+ else
+ {
+     WarnInternal("Could not find PersistentEffectDefaults:" @ string(EffectName));
+ }
+ //return;    
+}
+
+final function TogglePostProcessSettings(name Id, bool bEnabled)
+{
+ local int Index, NewIndex;
+ local float BlendOutTime, BlendInTime;
+
+ Index = PostProcessOverrides.Find('Id', Id);
+ // End:0x1ED
+ if(Index != -1)
+ {
+     PostProcessOverrides[Index].bEnabled = bEnabled;
+     BlendInTime = PostProcessOverrides[Index].BlendInTime;
+     BlendOutTime = PostProcessOverrides[Index].BlendOutTime;
+     NewIndex = GetNextPostProcessOverride();
+     // End:0x120
+     if(NewIndex == -1)
+     {
+         PlayerOwner.ClearPostProcessSettingsOverride(BlendOutTime);
+     }
+     // End:0x1ED
+     else
+     {
+         // End:0x1ED
+         if(NewIndex <= Index)
+         {
+             // End:0x19F
+             if(NewIndex == Index)
+             {
+                 PlayerOwner.OverridePostProcessSettings(PostProcessOverrides[NewIndex].Settings, BlendInTime);
+             }
+             // End:0x1ED
+             else
+             {
+                 PlayerOwner.OverridePostProcessSettings(PostProcessOverrides[NewIndex].Settings, BlendOutTime);
+             }
+         }
+     }
+ }
+ //return;    
+}
+
+protected final function int GetNextPostProcessOverride()
+{
+ local int I;
+
+ I = PostProcessOverrides.Length - 1;
+ J0x17:
+ // End:0x68 [Loop If]
+ if(I >= 0)
+ {
+     // End:0x5A
+     if(PostProcessOverrides[I].bEnabled)
+     {
+         return I;
+     }
+     -- I;
+     // [Loop Continue]
+     goto J0x17;
+ }
+ return -1;
+ //return ReturnValue;    
+}
+*/

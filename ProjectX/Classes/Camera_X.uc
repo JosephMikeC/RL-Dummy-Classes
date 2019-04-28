@@ -85,13 +85,14 @@ var protected export editinline CameraStateBlender_X Blender;
 var const transient vector ShakeLocationOffset;
 var const transient Rotator ShakeRotationOffset;
 var const transient float ShakeFOVOffset;
-var private transient LinearColor StartFadeColor;
-var private transient LinearColor EndFadeColor;
+var private transient color StartFadeColor;
+var private transient color EndFadeColor;
 var transient float ClipOffset;
 var transient array<LocationCameraKnock> LocationKnocks;
 var transient array<RotationCameraKnock> RotationKnocks;
 var transient bool bDisableCameraShake;
 
+/*
 /*
 var delegate<EventCameraStateChanged> __EventCameraStateChanged__Delegate;
 
@@ -113,7 +114,7 @@ static final function CameraOrientation BlendCameraOrientations(CameraOrientatio
  //return ReturnValue;    
 }
 
-static final function FinalizeOrientation(Camera_X OutPOV)
+static final function FinalizeOrientation(CameraOrientation OutPOV)
 {
  OutPOV.Rotation = Normalize(OutPOV.Rotation);
  OutPOV.CalculatedLocation = OutPOV.Focus - (vector(OutPOV.Rotation) * OutPOV.Distance);
@@ -160,11 +161,12 @@ static final function GetAPlayerController InterpVector(GetDefaultObject OldValu
 
 event PostBeginPlay()
 {
+    /*
  local EngineShare_X EngineShare;
 
  J0x00:    
  super.PostBeginPlay();
- EngineShare = class'EngineShare_X'.static.GetInstance();
+ EngineShare = EngineShare_X.GetInstance();
  /*
  // End:0x92
  if((EngineShare != none) && EngineShare.bIsShowingLoadmapMovie)
@@ -182,6 +184,7 @@ event PostBeginPlay()
  */
  OnLoadingMovieClosesd();
  InstanceCameraStates();
+ */
 }
 
 protected function OnLoadingMovieClosesd()
@@ -193,7 +196,6 @@ protected function OnLoadingMovieClosesd()
 
 function ModifyCameraShakeScale(CameraModifier_CameraShake_X Shake, float NewScale)
 {
- CameraModifier_CameraShake_X(CameraShakeCamMod).ModifyCameraShakeScale(Shake, NewScale);
  //return;    
 }
 
@@ -225,6 +227,7 @@ protected function InstanceCameraStates()
  //return;    
 }
 
+/*
 function AddLocationKnock(LocationCameraKnock Knock, float Scale, vector Transform)
 {
  Scale = 1.0;    
@@ -233,6 +236,7 @@ function AddLocationKnock(LocationCameraKnock Knock, float Scale, vector Transfo
  LocationKnocks.AddItem(Knock);
  //return;    
 }
+*/
 
 function AddRotationKnock(RotationCameraKnock Knock, float Scale)
 {
@@ -243,12 +247,11 @@ function AddRotationKnock(RotationCameraKnock Knock, float Scale)
  //return;    
 }
 
-    /*
-protected final function UpdateCameraKnocks(float DeltaTime, out @NULL OutPOV)
+protected final function UpdateCameraKnocks(float DeltaTime, CameraOrientation OutPOV)
 {
  local int I;
  local float Alpha;
- local @NULL LocationKnock, RotationKnock;
+ local CameraKnockBase LocationKnock, RotationKnock;
 
  I = LocationKnocks.Length - 1;
  J0x17:
@@ -318,7 +321,8 @@ protected final function UpdateCameraKnocks(float DeltaTime, out @NULL OutPOV)
  }
  //return;    
 }
-*/
+
+
 
 protected function UpdateCameraState()
 {
@@ -331,11 +335,12 @@ protected function UpdateCameraState()
      // End:0x88
      if(Blender.TransitionToState(SelectedState))
      {
-         EventCameraStateChanged(self, SelectedState);
+         //EventCameraStateChanged(self, SelectedState);
      }
  }
  //return;    
 }
+
 
 protected function CameraState_X SelectCameraState()
 {
@@ -391,13 +396,13 @@ protected simulated function ClampPOV(out @NULL OutPOV)
  //return;    
 }
 */
-
+/*
 simulated event UpdateCamera(float DeltaTime)
 {
  PCDeltaRotation = Normalize(PCOwner.Rotation - OldControllerRotation);
  PCDeltaLocation = PCOwner.Location - OldControllerLocation;
  bConstrainAspectRatio = false;
- CheckViewTarget(ViewTarget);
+ //CheckViewTarget(ViewTarget);
  ProcessCameraState(DeltaTime, PreProcessPOV);
  FinalizeOrientation(PreProcessPOV);
  ClampPOV(PreProcessPOV);
@@ -424,17 +429,17 @@ simulated event UpdateCamera(float DeltaTime)
  }
  //return;    
 }
-
+*/
 protected simulated function UpdateFade(float DeltaTime)
 {
  local float Blend;
 
  FadeTimeRemaining = FMax(FadeTimeRemaining - DeltaTime, 0.0);
  Blend = 1.0 - (FadeTimeRemaining / FadeTime);
- FadeColor.R = byte(float(StartFadeColor.R) + (float(EndFadeColor.R - StartFadeColor.R) * Blend));
- FadeColor.G = byte(float(StartFadeColor.G) + (float(EndFadeColor.G - StartFadeColor.G) * Blend));
- FadeColor.B = byte(float(StartFadeColor.B) + (float(EndFadeColor.B - StartFadeColor.B) * Blend));
- FadeColor.A = byte(float(StartFadeColor.A) + (float(EndFadeColor.A - StartFadeColor.A) * Blend));
+ FadeColor.R = byte(StartFadeColor.R + ((EndFadeColor.R - StartFadeColor.R) * Blend));
+ FadeColor.G = byte(StartFadeColor.G + ((EndFadeColor.G - StartFadeColor.G) * Blend));
+ FadeColor.B = byte(StartFadeColor.B + ((EndFadeColor.B - StartFadeColor.B) * Blend));
+ FadeColor.A = byte(StartFadeColor.A + ((EndFadeColor.A - StartFadeColor.A) * Blend));
  FadeAmount = ByteToFloat(FadeColor.A);
  // End:0x2BA
  if(bFadeAudio)
@@ -445,7 +450,7 @@ protected simulated function UpdateFade(float DeltaTime)
  //return;    
 }
 
-function SetCameraFade(bool bNewEnableFading, LinearColor NewFadeColor, optional float NewFadeAlpha, optional float NewFadeTime, optional bool bNewFadeAudio)
+function SetCameraFade(bool bNewEnableFading, color NewFadeColor, optional float NewFadeAlpha, optional float NewFadeTime, optional bool bNewFadeAudio)
 {
  StartFadeColor = FadeColor;
  EndFadeColor = NewFadeColor;
@@ -473,7 +478,7 @@ function CopyFade(Camera_X Other)
 // Export UCamera_X::execCheckViewTarget(FFrame&, void* const)
 native function CheckViewTarget(ViewTarget VT);
 */
-protected function ProcessCameraState(float DeltaTime, Camera_X OutPOV)
+protected function ProcessCameraState(float DeltaTime, CameraOrientation OutPOV)
 {
  UpdateCameraState();
  Blender.Tick(DeltaTime);
@@ -481,15 +486,15 @@ protected function ProcessCameraState(float DeltaTime, Camera_X OutPOV)
  //return;    
 }
 
-protected function PostProcessCameraState(float DeltaTime, Camera_X OutPOV)
+protected function PostProcessCameraState(float DeltaTime, CameraOrientation OutPOV)
 {
  Blender.PostProcessPOV(DeltaTime, OutPOV);
  UpdateCameraKnocks(DeltaTime, OutPOV);
  //return;    
 }
 
-/*
-function ProcessViewRotation(float DeltaTime, Rotator OutViewRotation, Rotator OutDeltaRot)
+
+function ProcessViewRotation(float DeltaTime, out Rotator OutViewRotation, out Rotator OutDeltaRot)
 {
  UpdateCameraState();
  // End:0x7D
@@ -499,7 +504,7 @@ function ProcessViewRotation(float DeltaTime, Rotator OutViewRotation, Rotator O
  }
  //return;    
 }
-*/
+
 
 event ModifyPostProcessSettings(CameraOrientation PP)
 {
@@ -511,9 +516,9 @@ event ModifyPostProcessSettings(CameraOrientation PP)
  //return;    
 }
 
-function Camera_X InstanceCameraState(Object Archetype)
+function CameraState_X InstanceCameraState(CameraState_X Archetype)
 {
- local Camera_X NewState;
+ local CameraState_X NewState;
 
  NewState = Archetype.NewInstance(self);
  NewState.Init(self);
@@ -530,6 +535,8 @@ native final function bool CameraTrace(@NULL End, DumpUnreferencedAnims Start, @
 // Export UCamera_X::execApplyCameraModifiers(FFrame&, void* const)
 native function ApplyCameraModifiers(float DeltaTime, Camera_X OutPOV);
 */
+
+/*
 simulated function PrintDebugInfo(DebugDrawer_X Drawer)
 {
  local int Idx;
@@ -549,3 +556,5 @@ simulated function PrintDebugInfo(DebugDrawer_X Drawer)
  }
  //return;    
 }
+*/
+*/

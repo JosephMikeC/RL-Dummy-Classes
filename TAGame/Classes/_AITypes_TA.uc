@@ -5,66 +5,112 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class _AITypes_TA extends Object
-    abstract
-    native;
+ class _AITypes_TA extends Object
+ abstract
+ native;
 
 enum EAITeam
 {
-    AITeam_Self,
-    AITeam_Enemy,
-    AITeam_Any,
-    AITeam_MAX
+ AITeam_Self,
+ AITeam_Enemy,
+ AITeam_Any,
+ AITeam_MAX
 };
 
 enum EAITraitValue
 {
-    AITraitValue_Low,
-    AITraitValue_Medium,
-    AITraitValue_High,
-    AITraitValue_MAX
+ AITraitValue_Low,
+ AITraitValue_Medium,
+ AITraitValue_High,
+ AITraitValue_MAX
 };
 
 enum EBTStatus
 {
-    BTStatus_Fail,
-    BTStatus_Success,
-    BTStatus_Running,
-    BTStatus_MAX
+ BTStatus_Fail,
+ BTStatus_Success,
+ BTStatus_Running,
+ BTStatus_MAX
 };
 
 struct native BTDynamicLinkData
 {
-    var() name LinkName;
-    var() BTNode Node;
+ var() name LinkName;
+ var() BTNode Node;
 
+ structdefaultproperties
+ {
+     LinkName=None
+     Node=none
+ }
+};
+
+struct native AITraits
+{
+ /** Behavior tree role */
+ var() AIRole_TA Role<ObjectList=>;
+// How likely we are to attack the ball vs wait for it
+ var() EAITraitValue Aggression;
+// How likely we are to attack other players
+ var() EAITraitValue Hostility;
+// How likely we are to do aerial stuff
+ var() EAITraitValue Airplay;
+
+ structdefaultproperties
+ {
+     Role=none
+     Aggression=EAITraitValue.AITraitValue_Low
+     Hostility=EAITraitValue.AITraitValue_Low
+     Airplay=EAITraitValue.AITraitValue_Low
+ }
 };
 
 struct native NamedEvent
 {
-    var name EventName;
-    var Actor Sender;
-    var float RadiusSq;
+ var name EventName;
+ var Actor Sender;
+ var float RadiusSq;
 
-   
+ structdefaultproperties
+ {
+     EventName=None
+     Sender=none
+     RadiusSq=0.0
+ }
 };
 
 struct native BTProxyData
 {
-    var vector Location;
-    var vector Velocity;
-    var vector Gravity;
-    var Rotator Rotation;
-    var float Radius;
-    var float Bounce;
-    var Actor Actor;
-    var Vehicle_TA Vehicle;
+ var vector Location;
+ var vector Velocity;
+ var vector Gravity;
+ var Rotator Rotation;
+ var float Radius;
+ var float Bounce;
+ var Actor Actor;
+ var Vehicle_TA Vehicle;
 
+ structdefaultproperties
+ {
+     Location=(X=0.0,Y=0.0,Z=0.0)
+     Velocity=(X=0.0,Y=0.0,Z=0.0)
+     Gravity=(X=0.0,Y=0.0,Z=0.0)
+     Rotation=(Pitch=0,Yaw=0,Roll=0)
+     Radius=0.0
+     Bounce=0.0
+     Actor=none
+     Vehicle=none
+ }
 };
 
 struct native AICachedGoalInfo
 {
-    var export editinline Goal_TA Goal;
-    var vector FieldSize;
+ var export editinline Goal_TA Goal;
+ var vector FieldSize;
 
+ structdefaultproperties
+ {
+     Goal=none
+     FieldSize=(X=0.0,Y=0.0,Z=0.0)
+ }
 };

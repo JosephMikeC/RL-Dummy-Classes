@@ -1,7 +1,9 @@
-class CarPreviewAnim_TA extends ActorComponent_X;
+class CarPreviewAnim_TA extends ActorComponent_X
+ native;
 
 var() ProductSlot_TA Slot;
-var() array<PreviewAnimKeyFrame> KeyFrames;
+// TODO
+//var() array<PreviewAnimKeyFrame> KeyFrames;
 var() float Delay;
 var() bool bDelayHidden;
 var() bool bLoop;
@@ -9,7 +11,8 @@ var transient bool bComponentWasAttached;
 var() name SkelControlName;
 var transient CarPreviewActor_TA PreviewActor;
 var export transient editinline PrimitiveComponent Component;
-var transient PreviewAnimKeyFrame FinalKeyFrame;
+// TODO
+//var transient PreviewAnimKeyFrame FinalKeyFrame;
 var transient float KeyframeTime;
 var transient int KeyframeIndex;
 var transient SkelControlSingleBone SkelControl;

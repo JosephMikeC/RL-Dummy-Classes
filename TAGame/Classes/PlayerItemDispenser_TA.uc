@@ -1,7 +1,7 @@
 class PlayerItemDispenser_TA extends Object;
 
 var() float ItemGiveRate;
-var() array<RandomWeight> Items;
+var() array<SpecialPickup_TA> Items;
 var() float PickWeightMultiplier;
 var() bool bResetWeightsOnGoal;
 var() bool bResetTimerOnDemolish;

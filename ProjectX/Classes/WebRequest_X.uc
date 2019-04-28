@@ -23,7 +23,7 @@ var private transient HttpRequestInterface HTTPRequest;
 var const transient bool HttpResponse;
 var const transient string Content;
 var const transient string ResponseData;
-// Haven't added the class yet.
+// TODO
 //var const transient Error_X Error;
 var const transient bool bConnectionReset;
 /*
@@ -86,15 +86,17 @@ private final event ConstructHttpRequest()
 // Export UWebRequest_X::execHandleHttpRequestComplete(FFrame&, void* const)
 private native final function HandleHttpRequestComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed);
 
+/*
 final event bool HasInternetConnection()
 {
  return class'OnlineGame_Base_X'.static.GetInstance().super(WebRequest_X).HasInternetConnection();
  //return ReturnValue;    
 }
-
+*/
 // Export UWebRequest_X::execSetError(FFrame&, void* const)
 native function SetError(class InError);
 
+/*
 simulated function PrintDebugInfo(DebugDrawer_X Drawer)
 {
  super.PrintDebugInfo(Drawer);
@@ -123,3 +125,4 @@ function string GetStringResult(string Key)
  return "";
  //return ReturnValue;    
 }
+*/

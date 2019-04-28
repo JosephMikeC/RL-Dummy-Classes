@@ -12,7 +12,8 @@ var() int ControllerId;
 var() export editinline ProductLoader_TA ProductLoader;
 var() export editinline CarMeshComponent_TA CarMesh;
 var() export editinline LightEnvironmentComponent LightEnvironment;
-var() export editinline SilhouetteComponent CarMeshSilhouette;
+// TODO
+//var() export editinline SilhouetteComponent CarMeshSilhouette;
 var() export editinline array<CarPreviewAnim_TA> AttachmentPreviewAnims;
 var() export editinline array<CarPreviewAnim_TA> WheelAnims;
 var() export editinline CarPreviewAnim_TA BodyAnim;

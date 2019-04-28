@@ -21,13 +21,13 @@ var() float TimerDelay;
 var privatewrite transient int FailCount;
 var privatewrite transient float NextRetryTime;
 var privatewrite transient WebRequest_X WebRequest;
-// Haven't added the class yet.
+// TODO
 //var privatewrite transient SqlQuery_X Query;
-// Haven't added the class yet.
+// TODO
 //var privatewrite transient Error_X Error;
 var privatewrite transient float TimerTime;
 /** For testing error handling, pretend the requests returned with these errors (in sequence). Insert 'none' for a success */
-// Haven't added the class yet.
+// TODO
 //var() array< Error_X > TestErrors;
 var private transient int TestErrorIndex;
 //var delegate<OnSend> __OnSend__Delegate;

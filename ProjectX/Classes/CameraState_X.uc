@@ -6,10 +6,10 @@
  * All rights belong to their respective owners.
  *******************************************************************************/
  class CameraState_X extends StateObject_X
- abstract;
+    abstract;
 
 /** the default blend params when transitioning to this state */
-var() protected AnimNodeBlendList DefaultBlendParams;
+var() protected ViewTargetTransitionParams DefaultBlendParams;
 // Not sure of type.
 //var privatewrite transient GetAPlayerController WorldInfo;
 var privatewrite transient CameraState_X Camera;
@@ -35,15 +35,15 @@ function bool ShouldKeepExecuting()
  //return ReturnValue;    
 }
 
-function AnimNodeBlendList GetStartBlendParams(string PreviousState)
+function ViewTargetTransitionParams GetStartBlendParams(CameraState_X PreviousState)
 {
- return DefaultBlendParams;
+ //return DefaultBlendParams;
  //return ReturnValue;    
 }
 
-function AnimNodeBlendList GetEndBlendParams(CameraState_X NewState)
+function ViewTargetTransitionParams GetEndBlendParams(CameraState_X NewState)
 {
- return NewState.GetStartBlendParams(self);
+ //return NewState.GetStartBlendParams(self);
  //return ReturnValue;    
 }
 
@@ -62,7 +62,7 @@ function Tick(float DeltaTime)
  //return;    
 }
 
-function UpdatePOV(float DeltaTime, Camera_X OutPOV)
+function UpdatePOV(float DeltaTime, CameraOrientation OutPOV)
 {
  //return;    
 }
@@ -72,7 +72,7 @@ function ProcessViewRotation(float DeltaTime, Rotator OutViewRotation, Rotator O
  //return;    
 }
 
-function ModifyPostProcessSettings(Orientation PP)
+function ModifyPostProcessSettings(PostProcessManager_X PP)
 {
  //return;    
 }

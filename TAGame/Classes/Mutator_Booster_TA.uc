@@ -5,8 +5,7 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class Mutator_Booster_TA extends Mutator_TA
-    dllbind();
+class Mutator_Booster_TA extends Mutator_TA;
 
 var() bool bNoBooster;
 var() bool bUnlimitedBoost;

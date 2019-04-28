@@ -14,6 +14,7 @@ var() export editinline ExplosionComponent_X ExplosionComponent;
 var() repnotify FXActor_X FXActorArchetype;
 var transient FXActor_X FXActor;
 
+/*
 replication
 {
  // Pos:0x000
@@ -81,3 +82,4 @@ simulated event Destroyed()
  }
  //return;    
 }
+*/

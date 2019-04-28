@@ -16,15 +16,15 @@ struct native CachedNavMeshLocation
     var vector OldActorLocation;
 };
 
-var() const config bool bFlushAILogEachLine;
-var() const config bool bOutputLogToWindow;
+var() const bool bFlushAILogEachLine;
+var() const bool bOutputLogToWindow;
 var transient bool bPauseForDirtyTrees;
 /** global AI locks */
 var() const export editinline BTLockCollection Locks;
 var privatewrite transient GameEvent_TA GameEvent;
 var privatewrite transient array<AIController_TA> Bots;
 var transient array<CachedNavMeshLocation> CachedNavMeshLocations;
-var transient FileLog AILogFile;
+//var transient FileLog AILogFile;
 
 final event AILog(Object Sender, coerce string Message, optional bool bVerbose)
 {
@@ -46,6 +46,4 @@ function RemoveBot(AIController_TA Bot)
     //return;    
 }
 
-event Destroyed()
-{
-}
+event Destroyed () {}

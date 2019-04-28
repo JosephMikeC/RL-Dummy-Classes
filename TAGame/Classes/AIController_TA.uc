@@ -75,7 +75,8 @@ var protectedwrite transient array<CachedTargetData> CachedTargetDatas;
 var protectedwrite native transient Map_Mirror TargetFilterMap;
 var protectedwrite transient array<BTNode> CachedTargetFilters;
 var transient vector DebugDriveDestination;
-var private native transient CachedObstaclesData CachedObstacles;
+// TODO
+//var private native transient CachedObstaclesData CachedObstacles;
 var privatewrite transient AITraits Traits;
 var privatewrite transient array<Car_TA> TeamCars;
 var privatewrite transient array<Car_TA> EnemyCars;

@@ -8,8 +8,8 @@
 class PointInSpace_TA extends Actor
     placeable;
 
-var() editinline SpriteComponent Sprite;
-var() editinline ArrowComponent Arrow;
+var() export editinline SpriteComponent Sprite;
+var() export editinline ArrowComponent Arrow;
 
 defaultproperties
 {

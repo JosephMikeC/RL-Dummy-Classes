@@ -55,7 +55,7 @@ var export editinline transient array<string> PendingKeyRequest;
 var() float ReservationTimeout;
 /** How long to wait for server to fill up before timing out */
 var() float WaitForPlayersTimeout;
-// Haven't added the class yet.
+// TODO
 //var export editinline TcpMessageBeacon Beacon;
 var transient array<OnlinePlayer_X> Players;
 var privatewrite transient bool bSkipReservationCheck;

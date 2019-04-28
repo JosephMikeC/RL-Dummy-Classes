@@ -29,13 +29,13 @@ var privatewrite transient AICachedGoalInfo TeamGoalInfo;
 var privatewrite transient AICachedGoalInfo EnemyGoalInfo;
 var transient float LastBallHitTime;
 
+/*
 var delegate<EventBallChanged> __EventBallChanged__Delegate;
-
 delegate EventBallChanged(AIController_Soccar_TA SoccarAI)
 {
     //return;    
 }
-    
+*/   
 function Init(GameEvent_TA InGameEvent)
 {
     

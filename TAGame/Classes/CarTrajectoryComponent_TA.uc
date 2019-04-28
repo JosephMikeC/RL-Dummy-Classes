@@ -11,7 +11,7 @@ var transient vector LastRotateAxis;
 var transient vector LastVelocity;
 
 // Not sure about these definitions
-float GetPointInterpSpeed(int PointIndex) {}
-void eventTick(float DeltaTime) {}
-void eventAttached() {}
-event SetEnabled(bool bEnable) {}
+function float GetPointInterpSpeed(int PointIndex) {}
+event Tick(float DeltaTime) {}
+event Attached() {}
+function SetEnabled(bool bEnable) {}
