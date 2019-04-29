@@ -181,7 +181,7 @@ defaultproperties
 {
 	Begin Object Class=StaticMeshComponent Name=DefaultMesh
 		ReplacementPrimitive=none
-        RBChannel=ERBCollisionChannel.RBCC_Ball
+        RBChannel=RBCollisionChannel.RBCC_Ball
         bNotifyRigidBodyCollision=true
         RBCollideWithChannels=(Default=true,Vehicle=true,GameplayPhysics=true,EffectPhysics=true,Ball=true,BlockingVolume=true)
         ScriptRigidBodyCollisionThreshold=0.000010

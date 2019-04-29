@@ -44,9 +44,9 @@ var privatewrite transient vector LocalExtent;
 defaultproperties
 {
 	PointsToAward=1
-	AutoCamFocusExtent=(X=2250.0,Y=4250.0,Z=4000.0)
+	AutoCamFocusExtent=(x=2250.0,y=4250.0,z=4000.0)
 	MaxGoalScorerAttachRadius=4000.0
-	GoalScoredDotDirection=(X=1.0,Y=0.0,Z=0.0)
+	GoalScoredDotDirection=(x=1.0,y=0.0,z=0.0)
 	MinAttachGoalToScorerDot=0.050
 }
 

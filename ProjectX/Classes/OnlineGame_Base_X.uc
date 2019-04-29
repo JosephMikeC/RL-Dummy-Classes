@@ -17,7 +17,7 @@ var() string OnlineSubGameInterfaceName;
 var transient bool GameSettings;
 /** Each game can only have one lobby active at a time In the case where the host of a party tries to connect to a server the Host lobby will stay up until the client lobby has successfully taken overvar transient OnlineGameLobby_X                                                    Lobby; Playlist manager that handles downloading playlists from the server */
 //var() GetAPlayerController Playlists;
-/** Analytics manager that handles uploading any game      info for tracking */
+/** Analytics manager that handles uploading any game info for tracking */
 // TODO
 //var() OnlineGameAnalytics_X Analytics;
 //var OnlineImageDownloaderWeb_X ImageDownloader;
