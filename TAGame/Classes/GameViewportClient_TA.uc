@@ -1,0 +1,1 @@
+class GameViewportClient_TA extends GameViewportClient_X;

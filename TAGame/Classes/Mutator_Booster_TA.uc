@@ -16,7 +16,7 @@ var() float BoostRechargeDelay;
 var() float BoostStartAmount;
 var() export editinline VehiclePickup_BoostModifier_TA BoostModifier;
 
-function MutateObject(Object O)
+protected event MutateObject(Object O)
 {
     local AITraits Boost;
     local float BoostPickup;

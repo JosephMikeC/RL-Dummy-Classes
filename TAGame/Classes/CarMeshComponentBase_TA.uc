@@ -1,4 +1,5 @@
-class CarMeshComponentBase_TA extends SkeletalMeshComponent_TA;
+class CarMeshComponentBase_TA extends SkeletalMeshComponent_TA
+native;
 
 var ProductAsset_Body_TA BodyAsset;
 var ProductAsset_Skin_TA SkinAsset;
@@ -14,6 +15,7 @@ var transient bool bBoosting;
 var bool bLocalPlayer;
 var transient ProductAsset_PaintFinish_TA TeamFinish;
 var transient ProductAsset_PaintFinish_TA CustomFinish;
+// TODO
 //var transient ClubColorSet ClubColors;
 var export transient editinline array<AntennaComponent_TA> Antennas;
 var export transient editinline array<MeshComponent> WheelMeshes;
@@ -21,11 +23,12 @@ var transient FXActor_X BodyFX;
 var transient array<FXActor_X> FXActors;
 var transient array<AttachmentBehavior_TA> Behaviour;
 var transient FXActor_X BodyFXActor;
-var transient ClientLoadoutOnlineData ProductAttributes;
+// TODO
+//var transient ClientLoadoutOnlineData ProductAttributes;
 var() const array<name> ProductAttachmentSockets;
 var transient int QueuedTeamFinishID;
-var transient int QueuedCustomFinishID:
-var transient array<InheritedObjects> ObjectsWithInheritedSettings;
+var transient int QueuedCustomFinishID;
+//var transient array<InheritedObjects> ObjectsWithInheritedSettings;
 //var delegate<EventPaintSettingsUpdated> __EventPaintSettingsUpdated__Delegate;
 
 /*

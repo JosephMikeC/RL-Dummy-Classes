@@ -37,14 +37,18 @@ var bool bAddToCarPreviewList;
 var transient array<FXActor_TA> SupersonicFX;
 var transient ProductAsset_EngineAudio_TA EngineAudioAsset;
 var transient EngineAudioPreviewBase_TA EngineAudioPreview;
-var transient MusicStingersPreview_TA MusicStingersPreview;
+//var transient MusicStingersPreview_TA MusicStingersPreview;
 var() int LinkedControllerId;
-var export editinline AkParamGroup Ak;
+// TODO
+//var export editinline AkParamGroup Ak;
 
 // Don't have the correct types, possibly are references to Event functions for this class?
 /**
-var ScriptDelegate __EventInitializeComponents__Delegate;
-var ScriptDelegate __ProductApplicatorDelegate__Delegate;
+var delegate<EventInitializeComponents> __EventInitializeComponents__Delegate;
+var delegate<ProductApplicatorDelegate> __ProductApplicatorDelegate__Delegate;
+
+delegate EventInitializeComponents (CarPreviewActor_TA PreviewActor) {}
+function ProductApplicatorDelegate (ProductAsset_TA Asset) {}
 */
 
 function __CarPreviewActor_TA__PostBeginPlay (CarMeshComponentBase_TA _) {}
@@ -60,7 +64,8 @@ function EnableTick (bool bEnable) {}
 function DestroyTurnTableActor () {}
 function ResetColors () {}
 function SetLockLoadout (bool bInLock) {}
-function BuildOnlineLoadout (LoadoutData InLoadout, ClientLoadoutOnlineData OnlineLoadout) {}
+// TODO
+//function BuildOnlineLoadout (LoadoutData InLoadout, ClientLoadoutOnlineData OnlineLoadout) {}
 function UpdateParticlesFakeVelocity () {}
 function Rotator GetSMRotation () {}
 function SetSMRotation (float DeltaTime, float YawInput, bool bGamepad) {}
@@ -96,10 +101,8 @@ function UpdateBoostGlow () {}
 function DeactivatePreviewSlot () {}
 function ActivatePreviewSlot () {}
 function SetPreviewSlot (ProductSlot_TA InSlot) {}
-function ChangeCarPart (int SlotIndex, int ProductID, bool long OnlineID, int TeamPaintIndex) {}
+function ChangeCarPart (int SlotIndex, int ProductID, bool OnlineID, int TeamPaintIndex) {}
 function ForceSetLoadout (LoadoutData InLoadout) {}
 function SetLoadout (LoadoutData InLoadout) {}
 event Destroyed () {}
 event PostBeginPlay () {}
-function ProductApplicatorDelegate (ProductAsset_TA Asset) {}
-event EventInitializeComponents (CarPreviewActor_TA PreviewActor) {}

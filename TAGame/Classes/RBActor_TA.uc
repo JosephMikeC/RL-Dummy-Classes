@@ -29,29 +29,14 @@ struct native NetworkSyncSettingsData
 {
     /** How fast to blend out location errors over time */
     var() float LocationFixRate;
-    /** How fast to blend out location errors over time// How fast to blend out angular errors over time
- */
+    /** How fast to blend out angular errors over time */
     var() float AngularFixRate;
-    /** How fast to blend out location errors over time// How fast to blend out angular errors over time
-// Don't apply correction if the location difference is less than this
- */
+    /** Don't apply correction if the location difference is less than this */
     var() float MinDeltaLocation;
-    /** How fast to blend out location errors over time// How fast to blend out angular errors over time
-// Don't apply correction if the location difference is less than this
-// Don't apply correction if the rotation difference is less than this
- */
+    /** Don't apply correction if the rotation difference is less than this */
     var() const int MinDeltaRotation;
-    /** How fast to blend out location errors over time// How fast to blend out angular errors over time
-// Don't apply correction if the location difference is less than this
-// Don't apply correction if the rotation difference is less than this
-// Don't apply correction if the velocity difference is less than this
- */
+    /** Don't apply correction if the velocity difference is less than this */
     var() float MinDeltaLinearVelocity;
-    /** How fast to blend out location errors over time// How fast to blend out angular errors over time
-// Don't apply correction if the location difference is less than this
-// Don't apply correction if the rotation difference is less than this
-// Don't apply correction if the velocity difference is less than this
- */
     var() bool bDebug;
 
     structdefaultproperties

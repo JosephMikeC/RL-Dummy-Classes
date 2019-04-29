@@ -9,18 +9,12 @@
 
 var() array<PlayerInputSequence_TA> InputSequences;
 var transient bool bExecutedKonamiCode;
+/*
 var delegate<EventKonamiCode> __EventKonamiCode__Delegate;
 var delegate<EventBecomePrimaryPlayer> __EventBecomePrimaryPlayer__Delegate;
-
-delegate EventKonamiCode()
-{
- //return;    
-}
-
-delegate EventBecomePrimaryPlayer() 
-{
- //return;
-}
+delegate EventBecomePrimaryPlayer (PlayerController_Menu_TA Primary) {}
+delegate EventKonamiCode () {}
+*/
 
 function ShowControllerApplet () {}
 function ShowAccountPicker () {}
@@ -28,12 +22,10 @@ function MusicTogglePlaylistSelection () {}
 function MusicNextTrack () {}
 function KonamiCode () {}
 event PlayerTick (float DeltaTime) {}
-function ClientSetOnlineStatus () {}
+//function ClientSetOnlineStatus () {}
 //function RemoveInputSequence (struct FName& SequenceName) {}
 function RemoveSplashScreenSequences () {}
 event Destroyed () {}
 function int GetInputSequencePriority (PlayerInputSequence_TA Sequence) {}
 function HandleCameraSave (ProfileCameraSave_TA CameraSettings) {}
-event ReceivedPlayer () {}
-event EventBecomePrimaryPlayer (PlayerController_Menu_TA Primary) {}
-event EventKonamiCode () {}
+simulated event ReceivedPlayer () {}

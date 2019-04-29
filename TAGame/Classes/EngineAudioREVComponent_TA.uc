@@ -1,17 +1,19 @@
 class EngineAudioREVComponent_TA extends EngineAudioBaseComponent_TA;
 
-var() UEngineAudioProfileREV_TA Profile;
-var() UAkRevPhysicsSimulation PhysicsSim;
-var() export editinline UEngineAudioRevSimLimiter_TA RevLimiter;
-var() export editinline UEngineAudioRevSimReverse_TA Reverse;
-var() export editinline UEngineAudioRevSimVelocitySync_TA VelocitySync;
-var() export editinline UEngineAudioRevSimBoost_TA Boost;
-var() export editinline UEngineAudioRevSimBoostLevel_TA BoostLevel;
-var() export editinline UEngineAudioRevSimResistance_TA Resistance;
-var transient FAkRevSimFrame SimFrame;
-var transient FAkRevSimUpdateParams CachedUpdateParams;
+var() EngineAudioProfileREV_TA Profile;
+// TODO
+//var() AkRevPhysicsSimulation PhysicsSim;
+var() export editinline EngineAudioRevSimLimiter_TA RevLimiter;
+var() export editinline EngineAudioRevSimReverse_TA Reverse;
+var() export editinline EngineAudioRevSimVelocitySync_TA VelocitySync;
+var() export editinline EngineAudioRevSimBoost_TA Boost;
+var() export editinline EngineAudioRevSimBoostLevel_TA BoostLevel;
+var() export editinline EngineAudioRevSimResistance_TA Resistance;
+// TODO
+//var transient AkRevSimFrame SimFrame;
+//var transient AkRevSimUpdateParams CachedUpdateParams;
 
-// Not sure about these definitions
+// Not sure about these definitions.
 /**
 float __EngineAudioREVComponent_TA__InitFromAsset () {}
 void PrintDebugInfo (DebugDrawer Drawer ) {}
