@@ -19,7 +19,7 @@ var transient bool bDoubleJumped;
 var transient bool bOnGround;
 var transient bool bSuperSonic;
 var repnotify transient bool bPodiumMode;
-//var const transient VehicleInputs Input;
+var const transient VehicleInputs Input;
 var const repnotify transient byte ReplicatedThrottle;
 var const repnotify transient byte ReplicatedSteer;
 var transient AIController_TA AIController;

@@ -28,7 +28,7 @@ enum EFXComponentTarget
 var class SpawnState;
 var Qword ActivationState;
 /** Components to attach in response to various named events */
-//var() array<ActorComponent_X> Attachments;
+var() array<ActorComponent_X> Attachments;
 /** Default socket or bone name to attach things to */
 var() name SocketOrBoneName;
 /** Deactivate all fx when our ownger gets destroyed */

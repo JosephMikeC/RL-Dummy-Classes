@@ -10,7 +10,7 @@ class Goal_TA extends ActorComponent_X
 	
 /** Defines the direction that this goal faces. If not set, assumes owner's rotation */
 var() const Actor GoalOrientation;
-//var() const array OverrideGoalIndicatorOrientations;
+var() const array<Actor> OverrideGoalIndicatorOrientations;
 /** Team Number **/
 var() byte TeamNum;
 /** FX to play when goal scored */

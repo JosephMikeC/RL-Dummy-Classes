@@ -20,5 +20,5 @@ var() float FXArchetype;
 //var() @NULL FXOffset;
 var() float BallMultiplier;
 var() bool bDebugVis;
-//var transient @NULL Direction;
+var transient vector Direction;
 //var transient byte FX;

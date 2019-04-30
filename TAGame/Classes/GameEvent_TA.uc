@@ -35,10 +35,10 @@ var() privatewrite int MaxPlayers;
 /** Starting points for this event */
 var(Setup) array<Actor> SpawnPoints;
 /** AI manager to spawn */
-//var() AIManager_TA AIManagerArchetype;
+var() AIManager_TA AIManagerArchetype;
 //var privatewrite transient AIManager_TA AIManager;
 /** AI controller to use for bots */
-//var() AIController_TA BotArchetype;
+var() AIController_TA BotArchetype;
 var privatewrite transient float BotSkill;
 /** The amount of time it takes a car to respawn after being killed */
 var() int RespawnTime;
@@ -56,13 +56,13 @@ var privatewrite transient array<Car_TA> Cars;
 var privatewrite transient array<PlayerController_TA> LocalPlayers;
 var protectedwrite transient int StartPointIndex;
 var private repnotify transient byte ReplicatedStateIndex;
-//var Message_TA GameFullMessage;
-//var Message_TA OtherActiveMessage;
-//var Message_TA NotEnoughPlayersMessage;
-//var Message_TA TooManyPlayersMessage;
-//var Message_TA NotPartyLeaderMessage;
-//var array<Message_TA> CountdownMessages;
-//var Message_TA GoMessage;
+var Message_TA GameFullMessage;
+var Message_TA OtherActiveMessage;
+var Message_TA NotEnoughPlayersMessage;
+var Message_TA TooManyPlayersMessage;
+var Message_TA NotPartyLeaderMessage;
+var array<Message_TA> CountdownMessages;
+var Message_TA GoMessage;
 var privatewrite transient int GameStateTimeRemaining;
 var private repnotify transient int ReplicatedGameStateTimeRemaining;
 /** Kick client when they have been idle for this long */

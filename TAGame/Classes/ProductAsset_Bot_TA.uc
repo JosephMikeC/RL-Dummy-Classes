@@ -18,7 +18,7 @@ var() int OrangeTeamColorID;
 /** Accent color */
 var() int CustomColorID;
 /** Personality traits */
-//var() AITraits Traits;
+var() AITraits Traits;
 
 final function LoadoutData GetLoadout()
 {

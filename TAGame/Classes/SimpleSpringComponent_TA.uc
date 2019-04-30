@@ -9,7 +9,7 @@ class SimpleSpringComponent_TA extends Component
     native
     editinlinenew;
 
-//var() SimpleSpringSettings Spring;
+var() SimpleSpringSettings Spring;
 var transient vector Displacement;
 var transient vector NormalizedDisplacement;
 var transient vector MassLocation;
