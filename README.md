@@ -17,8 +17,9 @@ When you open the map in Rocket League, it searches for the classes used and ove
 Due to this, only variables that are editable in the editor will have their states applied when the map is opened.  
 
 ## How to add new classes
+[Here](https://wiki.beyondunreal.com/Types) is a reference to `type` syntax within UnrealScript. [BeyondUnreal](https://wiki.beyondunreal.com/) is a huge time saver and a great information repository.  
 In order to add a new class, you need a reference that contains at least the class definition (Name and extension).  
-NOTE: A correct extension type is not technically required (as the references in Rocket League overwrite the definition) but without it you will be missing class properties from the correct extended class.
+NOTE: A correct `extension` type is not technically required (Rocket League simply receives the class name) but without it you will be missing class properties from the correct extended class.
 If there are any class properties, they need to have the correct type. There have been no tests performed on whether or not the access modifiers (`const`, `export`, etc.) are required.
 If your reference is out of date (meaning Psyonix has changed the property or class name internally), it will not work. This is because the properties reference those that exist within the baked classes of Rocket League and will not know how to apply the properties (An example of this was when the workshop maps stopped spawning players in due to a change in a class name).  
 You can test your classes are syntactically correct by compiling them in UDK (which should happen automatically if you add them to the `<UDK-Installation-dir>/<project>/Development/Src/<package_name>/Classes` folder and restart UDK).  
