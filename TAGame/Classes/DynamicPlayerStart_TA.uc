@@ -5,5 +5,5 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class DynamicSpawnPoint_TA extends Actor
+class DynamicPlayerStart_TA extends PlayerStart_TA
     notplaceable;

@@ -18,25 +18,25 @@ var() export editinline array<CarPreviewAnim_TA> AttachmentPreviewAnims;
 var() export editinline array<CarPreviewAnim_TA> WheelAnims;
 var() export editinline CarPreviewAnim_TA BodyAnim;
 var() export editinline CarPreviewAnim_TA EngineAudioAnim;
-var export editinline CarPreviewAnim_TA EngineAudioAnimInstance;
+// var export editinline CarPreviewAnim_TA EngineAudioAnimInstance;
 var() float  SupersonicFakeSpeed;
 var() TurnTableActor_TA TurntableActor;
-var transient LoadoutData Loadout;
-var transient LoadoutData OldLoadout;
-var transient array<ProductAsset_TA> PreviewProducts;
-var transient FXActor_Boost_TA BoostFX;
-var transient ProductSlot_TA PreviewSlot;
-var transient Team_TA TeamArchetype;
-var string PlayerName;
-var transient FXActor_X BodyFX;
-var transient ProductAsset_Boost_TA BoostAsset;
-var transient ProductAsset_SupersonicTrail_TA SupersonicAsset;
-var transient bool bLockLoadout;
-var transient bool bSpinWheelsFromBoost;
-var bool bAddToCarPreviewList;
-var transient array<FXActor_TA> SupersonicFX;
-var transient ProductAsset_EngineAudio_TA EngineAudioAsset;
-var transient EngineAudioPreviewBase_TA EngineAudioPreview;
+// var transient LoadoutData Loadout;
+// var transient LoadoutData OldLoadout;
+// var transient array<ProductAsset_TA> PreviewProducts;
+// var transient FXActor_Boost_TA BoostFX;
+// var transient ProductSlot_TA PreviewSlot;
+// var transient Team_TA TeamArchetype;
+// var string PlayerName;
+// var transient FXActor_X BodyFX;
+// var transient ProductAsset_Boost_TA BoostAsset;
+// var transient ProductAsset_SupersonicTrail_TA SupersonicAsset;
+// var transient bool bLockLoadout;
+// var transient bool bSpinWheelsFromBoost;
+// var bool bAddToCarPreviewList;
+// var transient array<FXActor_TA> SupersonicFX;
+// var transient ProductAsset_EngineAudio_TA EngineAudioAsset;
+// var transient EngineAudioPreviewBase_TA EngineAudioPreview;
 //var transient MusicStingersPreview_TA MusicStingersPreview;
 var() int LinkedControllerId;
 // TODO
@@ -49,7 +49,7 @@ var delegate<ProductApplicatorDelegate> __ProductApplicatorDelegate__Delegate;
 
 delegate EventInitializeComponents (CarPreviewActor_TA PreviewActor) {}
 function ProductApplicatorDelegate (ProductAsset_TA Asset) {}
-*/
+
 
 function __CarPreviewActor_TA__PostBeginPlay (CarMeshComponentBase_TA _) {}
 function AddSilhouetteParents () {}
@@ -94,7 +94,8 @@ function InitSupersonicFX () {}
 function InitEngineAudioFX () {}
 function InitBoostFX () {}
 function InitBodyFX () {}
-function InitComponents () {}
+// Check to see if function contents can be overridden
+function InitComponents () {assert(false);}
 function HandleAllProductsLoaded (ProductLoader_TA Loader) {}
 function SetBoostGlow (float Glow) {}
 function UpdateBoostGlow () {}
@@ -106,3 +107,4 @@ function ForceSetLoadout (LoadoutData InLoadout) {}
 function SetLoadout (LoadoutData InLoadout) {}
 event Destroyed () {}
 event PostBeginPlay () {}
+*/
