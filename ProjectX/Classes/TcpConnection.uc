@@ -1,0 +1,1 @@
+class TcpConnection extends Object;

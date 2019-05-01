@@ -1,0 +1,1 @@
+class PerCon_X extends Object;

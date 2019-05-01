@@ -54,121 +54,29 @@ var(Shake) float BlendInTime;
 /** Blend times */
 var(Shake) float BlendOutTime;
 /** The camera shake parameters */
-var(Camera) DistributionFloatShakeParameter_X ShakeParams;
+var(Camera) CameraShake ShakeParams;
 /** Shake scales */
-var(Scale) float AmplitudeScale;
+var(Scale) RawDistributionFloat AmplitudeScale;
 /** Shake scales */
-var(Scale) float FrequencyScale;
+var(Scale) RawDistributionFloat FrequencyScale;
 /** Shake scales */
-var(Scale) float DurationScale;
+var(Scale) RawDistributionFloat DurationScale;
 var const transient float CurrentAmplitudeScale;
 var const transient float CurrentFrequencyScale;
 /** Feedback params */
-var(Feedback) float ForceFeedbackWaveform;
+var(Feedback) ForceFeedbackWaveform ForceFeedbackWaveform;
 /** Feedback scales */
 var(Feedback) float ForceFeedbackScale;
 /** -1 = full left rotor, 0 = both rotators equal, 1=full right rotator */
 var(Feedback) float ForceFeedbackBalance;
-var() editinline array<DistributionFloatShakeParameter_X> InstanceParameters;
+var() editinline array<ParticleSysParam> InstanceParameters;
 var privatewrite transient float PlayTime;
 var privatewrite transient float StopTime;
 var privatewrite transient vector ShakeLocTimeOffset;
-var privatewrite transient Rotator ShakeRotTimeOffset;
+var privatewrite transient vector ShakeRotTimeOffset;
 var privatewrite transient float ShakeFOVTimeOffset;
 var privatewrite transient float CameraShakeDuration;
 var privatewrite transient float ForceFeedbackDuration;
 var privatewrite transient float ForceFeedbackSamplesTime;
 var privatewrite transient Actor PrevOwner;
 var privatewrite transient array<ShakeReceiver> Receivers;
-
-protected event Attached()
-{
- PrevOwner = Owner;
- // End:0x2A
- if(bAutoPlay)
- {
-     PlayShake();
- }
- //return;    
-}
-
-protected event Detached()
-{
- StopShake(0.0);
- bStopping = false;
- //return;    
-}
-
-event PlayShake()
-{
- // End:0x99
- if(!bPlaying)
- {
-     // End:0x4F
-     if(!bAttached && PrevOwner != none)
-     {
-         PrevOwner.AttachComponent(self);
-     }
-     // End:0x99
-     if(bAttached)
-     {
-         Receivers.Length = 0;
-         bPlaying = true;
-         bStopping = false;
-         PlayTime = 0.0;
-         InitParams();
-     }
- }
- //return;    
-}
-
-// Export UShakeComponent_X::execInitParams(FFrame&, void* const)
-protected native function InitParams();
-
-event StopShake(optional float InBlendOutTime)
-{
- InBlendOutTime = default.BlendOutTime;
- // End:0x67
- if(bPlaying)
- {
-     bPlaying = false;
-     // End:0x67
-     if(InBlendOutTime > 0.0)
-     {
-         bStopping = true;
-         StopTime = 0.0;
-         BlendOutTime = InBlendOutTime;
-     }
- }
- //return;    
-}
-
-final function bool IsPlaying()
-{
- return bAttached && bPlaying || bStopping;
- //return ReturnValue;    
-}
-
-// Export UShakeComponent_X::execSetFloatParameter(FFrame&, void* const)
-native final function SetFloatParameter(name ParameterName, float Param);
-
-// Export UShakeComponent_X::execSetFloatRandParameter(FFrame&, void* const)
-native final function SetFloatRandParameter(name ParameterName, float Param, float ParamLow);
-
-// Export UShakeComponent_X::execSetVectorParameter(FFrame&, void* const)
-native final function SetVectorParameter(name ParameterName, vector Param);
-
-// Export UShakeComponent_X::execSetVectorRandParameter(FFrame&, void* const)
-native final function SetVectorRandParameter(name ParameterName, const out vector Param, const out float ParamLow);
-
-// Export UShakeComponent_X::execSetColorParameter(FFrame&, void* const)
-native final function SetColorParameter(name ParameterName, color Param);
-
-// Export UShakeComponent_X::execGetFloatParameter(FFrame&, void* const)
-native function bool GetFloatParameter(const name InName, out float OutFloat);
-
-// Export UShakeComponent_X::execGetVectorParameter(FFrame&, void* const)
-native function bool GetVectorParameter(const name InName, out vector OutVector);
-
-// Export UShakeComponent_X::execGetColorParameter(FFrame&, void* const)
-native function bool GetColorParameter(const name InName, out color OutColor);

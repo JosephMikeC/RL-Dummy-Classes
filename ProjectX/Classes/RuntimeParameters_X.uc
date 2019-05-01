@@ -1,0 +1,1 @@
+class RuntimeParameters_X extends Object;

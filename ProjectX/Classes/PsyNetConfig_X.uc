@@ -1,0 +1,20 @@
+class PsyNetConfig_X extends OnlineConfig_X;
+
+var() bool bAllowPerCon;
+var() bool bAllowPsyNetParty;
+var() bool bSendPingMessage;
+var() bool bUploadServerBugReports;
+var() bool bAllowServerBacktraceUploads;
+var() bool bAllowServerBacktraceLogUploads;
+var() bool bAllowClientBacktraceUploads;
+var() bool bAllowClientBacktraceLogUploads;
+var() bool bUseMatchmakingPolling;
+var() bool bUseMatchmakingNotifications;
+var() bool bAllowPlayerCancelMatch;
+var() int PerConMaxInvalidMessages;
+var() int PerConMaxDisconnects;
+var() int PerConMaxErrors;
+var() float PerConErrorWindow;
+var() float PerConTimeout;
+var() float PerConPingInterval;
+var() float FreshConnectionWindow;

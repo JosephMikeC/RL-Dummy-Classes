@@ -1,0 +1,1 @@
+class AnimNodePose_X extends AnimNodeSequence_X;

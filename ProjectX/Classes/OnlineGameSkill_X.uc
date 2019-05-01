@@ -1,0 +1,1 @@
+class OnlineGameSkill_X extends Online_X;

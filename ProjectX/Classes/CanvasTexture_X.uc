@@ -1,0 +1,1 @@
+class CanvasTexture_X extends TextureRenderTarget2D;

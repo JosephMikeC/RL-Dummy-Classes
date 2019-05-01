@@ -1,0 +1,1 @@
+class RuntimeParameter_Speed_X extends RuntimeParameterBase_X;

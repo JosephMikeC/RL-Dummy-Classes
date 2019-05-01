@@ -1,0 +1,1 @@
+class RandomStream_X extends Object;

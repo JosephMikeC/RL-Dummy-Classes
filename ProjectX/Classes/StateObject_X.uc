@@ -10,14 +10,3 @@ class StateObject_X extends Object
     native;
 
 var() bool bDebug;
-
-// Export UStateObject_X::execDestroy(FFrame&, void* const)
-native function Destroy();
-
-event Destroyed()
-{
-    //return;    
-}
-
-// Export UStateObject_X::execInitExecution(FFrame&, void* const)
-native function InitExecution();

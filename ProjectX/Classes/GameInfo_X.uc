@@ -5,5 +5,9 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class GameInfo_X extends FrameworkGame
+class GameInfo_X extends GameInfo
     native;
+
+var() GameReplicationInfo GameReplicationInfoArchetype;
+var() PlayerController PlayerControllerArchetype;
+var() Pawn PawnArchetype;

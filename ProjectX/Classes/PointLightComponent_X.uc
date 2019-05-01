@@ -1,0 +1,3 @@
+class PointLightComponent_X extends PointLightComponent;
+
+var() export editinline DistributionFloatConstantCurve BrightnessOverTime;

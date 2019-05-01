@@ -1,0 +1,1 @@
+class NetworkNextMetrics_X extends MetricsGroup_X;

@@ -1,0 +1,1 @@
+class CachedWebData_X extends Object;

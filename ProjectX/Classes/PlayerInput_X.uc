@@ -1,0 +1,1 @@
+class PlayerInput_X extends PlayerInput;

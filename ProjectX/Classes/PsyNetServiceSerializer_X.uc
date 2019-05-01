@@ -1,0 +1,1 @@
+class PsyNetServiceSerializer_X extends Object;

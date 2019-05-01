@@ -1,0 +1,2 @@
+class GFxObjectReference_X extends Object
+native;

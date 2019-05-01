@@ -9,15 +9,13 @@ class ArchetypeSpawnPoint_X extends Actor
     native
     placeable;
 
-//var private native const noexport @NULL VfTable_IInterface_NavMeshPathObject;
-/** deprecated (actually not yet) */
-//var() /*0x00000800-0x00000000*/ const string ArchetypePath<Class=Actor>;
+var() const string ArchetypePath;
 var() bool bSeedNavMesh;
 var() bool bSpawnOnLevelStart;
 var() bool bOnlyAllowOneInstance;
-//var export editinline Qword PlacementSprite;
-var export editinline float ArchetypeSkeletalMesh;
-//var export editinline @NULL ArchetypeStaticMesh;
-var transient array<string> SpawnedActors;
-var transient bool SpawnedActor;
-//var delegate<@NULL> __EventSpawned__Delegate;
+var() Actor ActorArchetype;
+var export editinline SpriteComponent PlacementSprite;
+var export editinline SkeletalMeshComponent ArchetypeSkeletalMesh;
+var export editinline StaticMeshComponent ArchetypeStaticMesh;
+var transient array<Actor> SpawnedActors;
+var transient Actor SpawnedActor;

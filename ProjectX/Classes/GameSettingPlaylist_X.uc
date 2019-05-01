@@ -1,0 +1,20 @@
+class GameSettingPlaylist_X extends GameSetting_X;
+
+var() string Title;
+var() string Description;
+var() int PlayerCount;
+var() bool bStandard;
+var() bool bSolo;
+var() bool bNew;
+var() bool bApplyQuitPenalty;
+var() bool bAllowForfeit;
+var() bool bDisableRankedReconnect;
+var() bool bIgnoreAssignTeams;
+var() bool bKickOnMigrate;
+var() bool bAllowClubs;
+var() bool bPlayersVSBots;
+var() int PlaylistId;
+var() TimeWindow PlaylistTimeWindow;
+var() array<PresetMutators_X> PresetMutators;
+var() name MapName;
+var() string ServerCommand;

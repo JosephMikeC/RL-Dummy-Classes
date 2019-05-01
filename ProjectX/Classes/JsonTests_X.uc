@@ -1,0 +1,1 @@
+class JsonTests_X extends Object;

@@ -1,0 +1,1 @@
+class Serializer_X extends Object;

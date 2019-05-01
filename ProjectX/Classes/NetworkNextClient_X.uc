@@ -1,0 +1,1 @@
+class NetworkNextClient_X extends Object;

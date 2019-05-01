@@ -1,0 +1,1 @@
+class FakeData_X extends Object;

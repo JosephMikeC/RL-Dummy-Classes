@@ -1,0 +1,1 @@
+class CrashReport_X extends Object;

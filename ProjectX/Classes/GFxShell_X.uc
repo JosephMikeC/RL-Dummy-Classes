@@ -7,9 +7,8 @@
  *******************************************************************************/
 class GFxShell_X extends GFxDataSingleton_X;
 
-/*
-var() float MoviePlayerArchetype;
-//var const transient GetAPlayerController Player;
+var() GFxMoviePlayer_X MoviePlayerArchetype;
+var const transient LocalPlayer_X Player;
 /** Whether game is paused */
 var databinding bool bGamePaused;
 var const transient bool bWasFullscreen;
@@ -19,8 +18,7 @@ var databinding float LeftX;
 var databinding float LeftY;
 var databinding float RightX;
 var databinding float RightY;
-//var const transient array<coerce out GetAPlayerController> Movies;
-//var const export editinline GetAPlayerController DataStore;
-//var privatewrite transient byte NavigationMode;
-//var const transient byte InputType;
-*/
+var const transient array<GFxMoviePlayer_X> Movies;
+var const export editinline GFxDataStore_X DataStore;
+var privatewrite transient byte NavigationMode;
+var const transient byte InputType;

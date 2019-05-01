@@ -1,0 +1,1 @@
+class NetworkNextConnectionProxy_X extends TcpipConnection;

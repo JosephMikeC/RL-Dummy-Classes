@@ -9,6 +9,80 @@
  abstract
  native;
 
+enum EBanType
+{
+	BanType_Auth,
+	BanType_Parental,
+	BanType_MAX
+};
+
+enum EConsoleQualityMode
+{
+	ConsoleQualityMode_Performance,
+	ConsoleQualityMode_Quality,
+	ConsoleQualityMode_MAX
+};
+
+enum EPlayerAuthState
+{
+	PlayerAuthState_None,
+	PlayerAuthState_NewUserFlow,
+	PlayerAuthState_HighlightReel,
+	PlayerAuthState_SetName,
+	PlayerAuthState_RequestingInitialLoadout,
+	PlayerAuthState_InitialLoadoutFailed,
+	PlayerAuthState_CarSelect,
+	PlayerAuthState_CarSelected,
+	PlayerAuthState_MAX
+};
+
+enum EDatabaseEnvironment
+{
+	DBE_DevLocal,
+	DBE_Dev,
+	DBE_Test,
+	DBE_Production,
+	DBE_MAX
+};
+
+enum EPartyMatchmakingRestriction
+{
+	PMR_NotOriginalAppOwner,
+	PMR_PendingLicenseAgreement,
+	PMR_InMainMenu,
+	PMR_NotLoggedInPsyNet,
+	PMR_MAX
+};
+
+enum EBlogTileType
+{
+	BlogTileType_Carousel,
+	BlogTileType_RLCS,
+	BlogTileType_Community,
+	BlogTileType_MAX
+};
+
+enum EOnlinePlayerPermission
+{
+	OPP_PrivateMatchAdmin,
+	OPP_SuperPrivateMatchAdmin,
+	OPP_MAX
+};
+
+enum EOnlinePlayerRole
+{
+	OPR_PrivateMatchAdmin,
+	OPR_SuperPrivateMatchAdmin,
+	OPR_MAX
+};
+
+enum EPsyNetTransportType
+{
+	PsyNetTransport_HTTP,
+	PsyNetTransport_WebSocket,
+	PsyNetTransport_MAX
+};
+
 enum EPlayerTitleType
 {
  PlayerTitleType_None,
@@ -70,15 +144,6 @@ enum ERemappable
  Remappable_KeyTriggerAxis,
  Remappable_None,
  Remappable_MAX
-};
-
-enum EDatabaseEnvironment
-{
- DBE_Test,
- DBE_Dev,
- DBE_DevLocal,
- DBE_Production,
- DBE_MAX
 };
 
 enum EAuthResult

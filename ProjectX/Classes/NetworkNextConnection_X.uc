@@ -1,0 +1,1 @@
+class NetworkNextConnection_X extends NetConnection;

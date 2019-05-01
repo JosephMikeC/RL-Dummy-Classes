@@ -1,0 +1,1 @@
+class AnimNotify_PlayParticleEffect_X extends AnimNotify_PlayParticleEffect;

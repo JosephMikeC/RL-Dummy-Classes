@@ -1,0 +1,1 @@
+interface IOnlineGameHost_X implements Interface;

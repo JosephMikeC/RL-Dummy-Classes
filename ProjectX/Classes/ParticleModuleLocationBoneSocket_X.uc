@@ -1,0 +1,1 @@
+class ParticleModuleLocationBoneSocket_X extends ParticleModuleLocationBoneSocket;

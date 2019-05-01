@@ -1,0 +1,1 @@
+class PsyNetMessengerHttp_X extends PsyNetMessenger_X;

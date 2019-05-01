@@ -1,0 +1,1 @@
+class PlaylistSettings_X extends Object;

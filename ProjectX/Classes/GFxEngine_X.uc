@@ -1,0 +1,1 @@
+class GFxEngine_X extends GFxEngine;

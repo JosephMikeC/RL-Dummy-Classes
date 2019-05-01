@@ -1,0 +1,1 @@
+class OnlineMessage_X extends Object;

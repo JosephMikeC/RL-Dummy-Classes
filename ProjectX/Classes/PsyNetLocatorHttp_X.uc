@@ -1,0 +1,1 @@
+class PsyNetLocatorHttp_X extends PsyNetLocator_X;

@@ -1,0 +1,1 @@
+class MetricsGroup_X extends EventRecorderGroup_X;

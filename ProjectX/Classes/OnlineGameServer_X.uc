@@ -1,0 +1,1 @@
+class OnlineGameServer_X extends OnlineGame_Base_X;

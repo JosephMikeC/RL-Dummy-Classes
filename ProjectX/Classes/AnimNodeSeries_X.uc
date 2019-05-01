@@ -1,0 +1,1 @@
+class AnimNodeSeries_X extends AnimNodeBlendBase_X;

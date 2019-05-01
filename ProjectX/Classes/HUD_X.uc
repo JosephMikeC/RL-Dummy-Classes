@@ -1,0 +1,1 @@
+class HUD_X extends HUD;

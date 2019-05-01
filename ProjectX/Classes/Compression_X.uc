@@ -1,0 +1,1 @@
+class Compression_X extends Object;

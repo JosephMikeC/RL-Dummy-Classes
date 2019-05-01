@@ -8,20 +8,4 @@
 class TickComponent_X extends TimersComponent_X
     native;
 
-//var private native const noexport @NULL VfTable_FTickableObject;
-/** if true, will tick even when game paused */
 var() bool bTickWhenGamePaused;
-var const bool bTick;
-/**
-var delegate<@NULL> __TickDelegate__Delegate;
-
-delegate TickDelegate(float DeltaTime)
-{
-    //return;    
-}
-**/
-// Export UTickComponent_X::execSetTickable(FFrame&, void* const)
-native function SetTickable(bool bWantsTick)
-{
-    //native.bWantsTick;        
-}

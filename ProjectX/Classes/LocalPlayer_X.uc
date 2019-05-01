@@ -9,30 +9,4 @@ class LocalPlayer_X extends LocalPlayer
     transient
     native;
 
-var protectedwrite transient bool OnlinePlayer;
-
-function OnCreated()
-{
-    //OnlinePlayer = class'OnlineGame_X'.static.GetInstance().CreateOnlinePlayer(self);
-    //return;    
-}
-
-function OnRemoved()
-{
-    //class'AkDevice'.static.RemoveListener(self);
-    //class'OnlineGame_X'.static.GetInstance().RemoveOnlinePlayer(self);
-    //return;    
-}
-
-event NotifyServerConnectionOpen()
-{
-    //return;    
-}
-/**
-// Export ULocalPlayer_X::execSpawnPlayActor(FFrame&, void* const)
-native function bool SpawnPlayActor(string URL, out string OutError)
-{
-    //native.URL;
-    //native.OutError;        
-}
-**/
+var protectedwrite transient OnlinePlayer_X OnlinePlayer;

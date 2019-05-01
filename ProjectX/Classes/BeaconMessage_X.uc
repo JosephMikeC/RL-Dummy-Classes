@@ -1,0 +1,1 @@
+class BeaconMessage_X extends Object;

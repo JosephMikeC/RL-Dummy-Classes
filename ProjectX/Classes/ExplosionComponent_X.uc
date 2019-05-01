@@ -8,8 +8,7 @@
  class ExplosionComponent_X extends ActorComponent_X
  native;
 
-/** Damage on first contact */
-var() export editinline DamageComponent_X DamageComponent;
+var() float RBVelocityChange;
 /** Where the radius should start growing from - anything inside this radius will be hit instantly */
 var() float StartRadius;
 /** Size the radius should grow to */
@@ -26,7 +25,7 @@ var() bool bDebug;
 /** Offset from owner's location to produce momentum from */
 var() vector MomentumOffset;
 var transient float Lifetime;
-var transient array<string> DamagedActors;
+var transient array<Actor> DamagedActors;
 
 protected event Detached()
 {

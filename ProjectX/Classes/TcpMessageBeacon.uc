@@ -1,0 +1,1 @@
+class TcpMessageBeacon extends TcpBeacon;

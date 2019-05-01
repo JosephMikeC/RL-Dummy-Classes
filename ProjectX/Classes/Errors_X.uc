@@ -1,0 +1,1 @@
+class Errors_X extends ErrorList;

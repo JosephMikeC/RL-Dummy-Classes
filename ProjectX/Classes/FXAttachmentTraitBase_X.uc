@@ -1,0 +1,1 @@
+class FXAttachmentTraitBase_X extends Object;

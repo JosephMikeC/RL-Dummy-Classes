@@ -1,0 +1,1 @@
+class PsyNetClientServiceCollection_X extends Object;

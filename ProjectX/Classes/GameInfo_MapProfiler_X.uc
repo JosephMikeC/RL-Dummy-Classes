@@ -1,0 +1,1 @@
+class GameInfo_MapProfiler_X extends GameInfo_X;

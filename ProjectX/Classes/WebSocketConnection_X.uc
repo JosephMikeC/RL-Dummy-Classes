@@ -1,0 +1,1 @@
+class WebSocketConnection_X extends TcpConnection;

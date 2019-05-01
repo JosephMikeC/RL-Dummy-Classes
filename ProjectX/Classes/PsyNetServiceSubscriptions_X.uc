@@ -1,0 +1,1 @@
+class PsyNetServiceSubscriptions_X extends Component;

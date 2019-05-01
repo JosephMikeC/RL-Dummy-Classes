@@ -11,40 +11,11 @@ class GFxDataRow_X extends Object
 
 /** Name of the table to create */
 var() const name TableName;
+var() const name PrimaryKeyName;
 /** Act as a proxy for the databinding properties for this class (pretend we have the same properties as him, as far as exporting ActionScript) */
 var() const class ProxyClass;
 /** If true, keep this data during level transitions. Otherwise it gets cleared. */
 var() bool bLevelTransitionPersistent;
-//var const transient GetAPlayerController ProxyObject;
-//var const transient DumpUnreferencedAnims Shell;
-
-protected event OnShellSet()
-{
-    //return;    
-}
-
-protected event OnRemoved()
-{
-    //return;    
-}
-
-// Export UGFxDataRow_X::execSetProxy(FFrame&, void* const)
-native function SetProxy(string InProxyObject)
-{
-    //native.InProxyObject;        
-}
-
-// Export UGFxDataRow_X::execFlashEventVoid(FFrame&, void* const)
-native final function FlashEventVoid();
-
-// Export UGFxDataRow_X::execFlashEventInt(FFrame&, void* const)
-native final function int FlashEventInt();
-
-// Export UGFxDataRow_X::execFlashEventFloat(FFrame&, void* const)
-native final function float FlashEventFloat();
-
-// Export UGFxDataRow_X::execFlashEventString(FFrame&, void* const)
-native final function string FlashEventString();
-
-// Export UGFxDataRow_X::execFlashEventObject(FFrame&, void* const)
-//native final function GetAPlayerController FlashEventObject();
+var const transient Object ProxyObject;
+var const transient GFxShell_X Shell;
+var const transient int RowIndex;

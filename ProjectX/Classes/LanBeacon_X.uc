@@ -1,0 +1,1 @@
+class LanBeacon_X extends Component;

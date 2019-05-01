@@ -1,0 +1,1 @@
+class NetworkNextServer_X extends Object;

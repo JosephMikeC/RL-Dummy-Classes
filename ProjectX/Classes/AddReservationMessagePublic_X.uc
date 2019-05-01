@@ -1,0 +1,1 @@
+class AddReservationMessagePublic_X extends AddReservationMessage_X;

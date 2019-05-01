@@ -1,0 +1,1 @@
+class CDN_X extends Object;

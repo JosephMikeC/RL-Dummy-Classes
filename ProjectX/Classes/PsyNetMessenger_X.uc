@@ -1,0 +1,1 @@
+class PsyNetMessenger_X extends Object;

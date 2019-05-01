@@ -1,0 +1,1 @@
+class CheatObject_X extends Object;

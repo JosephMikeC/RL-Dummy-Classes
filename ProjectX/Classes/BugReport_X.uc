@@ -5,5 +5,16 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class BugReport_X extends object;
+class BugReport_X extends object
+native;
 
+enum EFileTruncateType
+{
+	FileTruncate_None,
+	FileTruncate_KeepStart,
+	FileTruncate_KeepEnd,
+	FileTruncate_MAX
+};
+
+var() string url;
+var() int MaxFileSizeMegabytes;

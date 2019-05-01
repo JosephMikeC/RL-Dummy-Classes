@@ -1,0 +1,1 @@
+class MetricsSystem_X extends EventRecorder_X;

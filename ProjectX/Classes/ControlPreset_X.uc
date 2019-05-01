@@ -1,0 +1,1 @@
+class ControlPreset_X extends Object;

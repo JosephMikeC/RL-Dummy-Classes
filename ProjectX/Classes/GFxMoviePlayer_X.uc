@@ -7,3 +7,6 @@
  *******************************************************************************/
 class GFxMoviePlayer_X extends GFxMoviePlayer
     native;
+
+var() name DebugTableCallback;
+var() name DebugColumnCallback;

@@ -9,34 +9,9 @@ class Pawn_X extends Pawn
 	native;
 	
 var() float GravityScale;
-var protected export editinline DamageComponent_X LegacyTakeDamageComponent;
-//var private transient GetUtcTimeStamp PreviousController;
-
-/*
-function PlayerChangedTeam()
-{
-    //local editinline class DmgComp;
-}
-
-function bool TakeDamage_X(GetAPlayerController Damage)
-{
-    local int actualDamage;
-    //local GetAPlayerController Killer;
-}
-
-function AdjustDamage_X(GetAPlayerController Damage)
-{
-    local int actualDamage;
-}
-
-function bool Died_X(GetAPlayerController Killer, GetAPlayerController Damage)
-{
-    //local GetAPlayerController Action, GameInfoX;
-    local bool MyController;
-}
-*/
+var private transient Controller PreviousController;
 
 defaultproperties
 {
-	
+	GravityScale=1.0
 }

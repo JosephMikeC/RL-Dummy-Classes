@@ -1,0 +1,1 @@
+class GFxDataCallback_X extends GFxObjectReference_X;
