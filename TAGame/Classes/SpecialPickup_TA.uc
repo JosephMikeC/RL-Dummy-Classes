@@ -9,9 +9,8 @@ var() FXActor_X PickupFXArchetype;
 // TODO
 //var() array<PickupReplacement> BodyReplacements;
 var() export editinline ShakeComponent_X ShakeComponentArchetype;
-// TODO
-//var() AkSoundCue ActivateSFX;
-//var() AkSoundCue LocalActivateSFX;
+var() AkSoundCue ActivateSFX;
+var() AkSoundCue LocalActivateSFX;
 var FXActor_X PickupFX;
 var export editinline ShakeComponent_X ShakeComp;
 /*

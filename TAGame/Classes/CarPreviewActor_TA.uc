@@ -39,8 +39,7 @@ var() TurnTableActor_TA TurntableActor;
 // var transient EngineAudioPreviewBase_TA EngineAudioPreview;
 //var transient MusicStingersPreview_TA MusicStingersPreview;
 var() int LinkedControllerId;
-// TODO
-//var export editinline AkParamGroup Ak;
+var export editinline AkParamGroup Ak;
 
 // Don't have the correct types, possibly are references to Event functions for this class?
 /**

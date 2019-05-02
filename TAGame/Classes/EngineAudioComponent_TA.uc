@@ -82,11 +82,10 @@ struct native EngineAudioNativeState_InAir extends EngineAudioNativeState_Clutch
  var float TimeInAir;
 };
 
-// TODO
 /** Audio components */
-//var() export editinline AkPlaySoundComponent EngineAudio;
+var() export editinline AkPlaySoundComponent EngineAudio;
 /** Audio components */
-//var() export editinline AkPlaySoundComponent ExhaustAudio;
+var() export editinline AkPlaySoundComponent ExhaustAudio;
 /** Gears for adjusting shift ranges */
 var() array<AudioGear> Gears;
 /** How long it takes to change gears */

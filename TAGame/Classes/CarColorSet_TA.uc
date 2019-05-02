@@ -15,8 +15,7 @@ var() editoronly array<editoronly LinearColor> H;
 /** Brightness + Saturation pairs */
 var() editoronly array<editoronly LinearColor> SV;
 var() LinearColor ColorBlindColor;
-// TODO
-//var() const array<DebugColor> DebugColors;
+var() const array<DebugColor> DebugColors;
 var() float MinStadiumBrightness;
 
 // I don't have the following in my references

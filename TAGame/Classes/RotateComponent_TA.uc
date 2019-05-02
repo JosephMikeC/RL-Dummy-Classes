@@ -5,9 +5,8 @@ var float LastMomentum;
 var float RotationSpeed;
 var Rotator CurrentRotation;
 var transient float TurntableDirection;
-// TODO
-//var() AkSoundCue SFX_Rotating;
-//var() AkSoundCue SFX_Reversing;
+var() AkSoundCue SFX_Rotating;
+var() AkSoundCue SFX_Reversing;
 var() InterpCurveFloat FallOFfCurve;
 var() InterpCurveFloat YawSpeedCurveMouse;
 var() InterpCurveFloat YawSpeedCurveGamepad;

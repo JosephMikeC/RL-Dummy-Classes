@@ -30,8 +30,7 @@ var repnotify float RechargeRate;
 var repnotify float RechargeDelay;
 var() repnotify int UnlimitedBoostRefCount;
 var repnotify transient byte ReplicatedBoostAmount;
-// TODO
-//var ProductAsset_Boost_TA BoostAsset;
+var ProductAsset_Boost_TA BoostAsset;
 var transient bool bOnlyApplyRechargeToMyHalf;
 var transient bool bOnlyApplyRechargeToOpposingHalf;
 var transient bool bDemolishOnEmptyMyHalf;
