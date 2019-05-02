@@ -1,0 +1,1 @@
+class RPC_GetPlayerPermissions_X extends RPC_X;

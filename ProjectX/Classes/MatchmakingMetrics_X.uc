@@ -1,0 +1,1 @@
+class MatchmakingMetrics_X extends MetricsGroup_X;

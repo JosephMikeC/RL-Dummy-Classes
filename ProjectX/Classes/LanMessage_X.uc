@@ -1,0 +1,1 @@
+class LanMessage_X extends OnlineMessage_X;

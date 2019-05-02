@@ -1,0 +1,1 @@
+class RPC_PsyNetGetPendingFriendRequests_X extends RPC_X;

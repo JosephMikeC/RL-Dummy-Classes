@@ -1,0 +1,1 @@
+class LocalCacheTests_X extends Object;

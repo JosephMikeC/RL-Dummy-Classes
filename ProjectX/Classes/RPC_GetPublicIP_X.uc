@@ -1,0 +1,1 @@
+class RPC_GetPublicIP_X extends RPC_X;

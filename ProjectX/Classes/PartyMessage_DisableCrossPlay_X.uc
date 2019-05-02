@@ -1,0 +1,1 @@
+class PartyMessage_DisableCrossPlay_X extends PartyMessage_X;

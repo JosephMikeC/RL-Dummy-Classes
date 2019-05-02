@@ -1,0 +1,1 @@
+class PsyNetService_FriendStatusUpdate_X extends PsyNetClientService_X;

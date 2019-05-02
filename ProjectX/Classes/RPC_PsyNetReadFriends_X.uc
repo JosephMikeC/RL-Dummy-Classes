@@ -1,0 +1,1 @@
+class RPC_PsyNetReadFriends_X extends RPC_X;

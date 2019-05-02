@@ -1,0 +1,1 @@
+class RPC_ReportLowFPS_X extends RPC_X;

@@ -1,0 +1,1 @@
+class RPC_CheckReservation_X extends RPC_X;

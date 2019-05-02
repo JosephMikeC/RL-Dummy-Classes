@@ -1,0 +1,1 @@
+class RPC_PsyNetSearchPlayerByName_X extends RPC_X;

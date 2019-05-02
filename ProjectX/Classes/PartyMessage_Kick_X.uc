@@ -1,0 +1,1 @@
+class PartyMessage_Kick_X extends PartyMessage_X;

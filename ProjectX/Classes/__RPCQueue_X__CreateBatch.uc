@@ -1,0 +1,1 @@
+class __RPCQueue_X__CreateBatch extends Object;

@@ -1,0 +1,1 @@
+class RPC_AddQuitter_X extends RPC_X;

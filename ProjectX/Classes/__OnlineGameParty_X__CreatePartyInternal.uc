@@ -1,0 +1,1 @@
+class __OnlineGameParty_X__CreatePartyInternal extends Object;

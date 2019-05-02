@@ -1,0 +1,1 @@
+class TAsyncResult__String extends AsyncTask;

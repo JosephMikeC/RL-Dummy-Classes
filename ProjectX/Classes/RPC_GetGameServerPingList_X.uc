@@ -1,0 +1,1 @@
+class RPC_GetGameServerPingList_X extends RPC_X;

@@ -1,0 +1,1 @@
+class RPC_PsyNetFriendRequestDecline_X extends RPC_X;

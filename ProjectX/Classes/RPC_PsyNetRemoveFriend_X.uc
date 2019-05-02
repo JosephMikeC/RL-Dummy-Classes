@@ -1,0 +1,1 @@
+class RPC_PsyNetRemoveFriend_X extends RPC_X;

@@ -1,0 +1,1 @@
+class RPC_GetGenericDataAll_X extends RPC_X;

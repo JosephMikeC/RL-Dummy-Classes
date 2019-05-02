@@ -1,0 +1,1 @@
+class ReservationCrossplayDisabledMessage_X extends BeaconMessage_X;

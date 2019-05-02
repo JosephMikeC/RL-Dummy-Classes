@@ -1,0 +1,1 @@
+class OnlineGameReservations_AssignTeamsByParty_X extends Object;

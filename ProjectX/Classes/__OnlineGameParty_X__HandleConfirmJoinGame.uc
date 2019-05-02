@@ -1,0 +1,1 @@
+class __OnlineGameParty_X__HandleConfirmJoinGame extends Object;

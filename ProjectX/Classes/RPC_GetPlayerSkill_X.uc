@@ -1,0 +1,1 @@
+class RPC_GetPlayerSkill_X extends RPC_X;

@@ -1,0 +1,1 @@
+class RPC_PsyNetSendFriendRequest_X extends RPC_X;

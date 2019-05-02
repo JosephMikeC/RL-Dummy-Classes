@@ -1,0 +1,1 @@
+class PsyNetService_FriendPsyTagUpdated_X extends PsyNetClientService_X;

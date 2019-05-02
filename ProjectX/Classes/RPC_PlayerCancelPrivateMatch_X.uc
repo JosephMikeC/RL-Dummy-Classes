@@ -1,0 +1,1 @@
+class RPC_PlayerCancelPrivateMatch_X extends RPC_X;

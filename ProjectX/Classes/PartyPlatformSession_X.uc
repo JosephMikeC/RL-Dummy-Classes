@@ -1,0 +1,1 @@
+class PartyPlatformSession_X extends Object;

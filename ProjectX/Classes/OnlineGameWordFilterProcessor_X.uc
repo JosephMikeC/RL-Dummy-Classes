@@ -1,0 +1,1 @@
+class OnlineGameWordFilterProcessor_X extends Online_X;

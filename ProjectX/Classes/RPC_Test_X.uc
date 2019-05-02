@@ -1,0 +1,1 @@
+class RPC_Test_X extends Object;

@@ -1,0 +1,1 @@
+class RPC_StartMatchmaking_X extends RPC_X;

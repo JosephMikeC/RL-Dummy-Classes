@@ -1,0 +1,1 @@
+class PsyNetService_PlayerUnfriended_X extends PsyNetClientService_X;

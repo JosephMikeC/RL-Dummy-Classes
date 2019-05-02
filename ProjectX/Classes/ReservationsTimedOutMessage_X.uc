@@ -1,0 +1,1 @@
+class ReservationsTimedOutMessage_X extends BeaconMessage_X;

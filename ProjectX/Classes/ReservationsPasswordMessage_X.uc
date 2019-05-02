@@ -1,0 +1,1 @@
+class ReservationsPasswordMessage_X extends BeaconMessage_X;

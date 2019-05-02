@@ -1,0 +1,1 @@
+class CancelJoinMessage_X extends BeaconMessage_X;

@@ -1,0 +1,1 @@
+class OnlineGameVoice_X extends Online_X;

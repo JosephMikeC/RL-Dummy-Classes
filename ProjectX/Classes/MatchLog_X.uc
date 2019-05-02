@@ -1,0 +1,1 @@
+class MatchLog_X extends Object;

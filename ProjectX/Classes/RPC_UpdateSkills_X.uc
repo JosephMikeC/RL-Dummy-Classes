@@ -1,0 +1,1 @@
+class RPC_UpdateSkills_X extends RPC_RecordMatchResults_X;

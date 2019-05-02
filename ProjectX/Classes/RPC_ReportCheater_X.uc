@@ -1,0 +1,1 @@
+class RPC_ReportCheater_X extends RPC_X;

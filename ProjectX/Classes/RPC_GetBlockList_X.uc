@@ -1,0 +1,1 @@
+class RPC_GetBlockList_X extends RPC_X;

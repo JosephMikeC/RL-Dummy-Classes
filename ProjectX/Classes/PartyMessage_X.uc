@@ -1,0 +1,1 @@
+class PartyMessage_X extends OnlineMessage_X;

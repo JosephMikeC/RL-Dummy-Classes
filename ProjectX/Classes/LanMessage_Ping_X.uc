@@ -1,0 +1,1 @@
+class LanMessage_Ping_X extends LanMessage_X;

@@ -1,0 +1,1 @@
+class ClubDetails_X extends ClubSettings_X;

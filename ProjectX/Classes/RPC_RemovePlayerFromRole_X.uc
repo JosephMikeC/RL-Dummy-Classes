@@ -1,0 +1,1 @@
+class RPC_RemovePlayerFromRole_X extends RPC_X;

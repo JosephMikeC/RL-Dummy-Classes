@@ -1,0 +1,1 @@
+class PartyMetrics_X extends MetricsGroup_X;

@@ -1,0 +1,1 @@
+class RPC_GetKeys_X extends RPC_KeysBase_X;

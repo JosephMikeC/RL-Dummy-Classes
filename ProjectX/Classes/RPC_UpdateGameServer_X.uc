@@ -1,0 +1,1 @@
+class RPC_UpdateGameServer_X extends RPC_X;

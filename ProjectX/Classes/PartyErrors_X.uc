@@ -1,0 +1,1 @@
+class PartyErrors_X extends ErrorList;

@@ -1,0 +1,1 @@
+class WebCache_X extends Object;

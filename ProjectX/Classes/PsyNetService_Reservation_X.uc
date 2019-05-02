@@ -1,0 +1,1 @@
+class PsyNetService_Reservation_X extends PsyNetClientService_X; 

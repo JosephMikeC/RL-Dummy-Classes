@@ -1,0 +1,1 @@
+class PartyMessage_InviteToTradeError_X extends PartyMessage_X;

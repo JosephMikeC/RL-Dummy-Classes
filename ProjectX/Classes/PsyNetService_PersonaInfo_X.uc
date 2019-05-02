@@ -1,0 +1,1 @@
+class PsyNetService_PersonaInfo_X extends PsyNetClientService_X;

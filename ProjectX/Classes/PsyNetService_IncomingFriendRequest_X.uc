@@ -1,0 +1,1 @@
+class PsyNetService_IncomingFriendRequest_X extends PsyNetService_PersonaInfo_X;

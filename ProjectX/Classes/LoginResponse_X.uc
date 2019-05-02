@@ -1,0 +1,1 @@
+class LoginResponse_X extends Object;

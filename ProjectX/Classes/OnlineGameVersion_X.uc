@@ -1,0 +1,1 @@
+class OnlineGameVersion_X extends Online_X;

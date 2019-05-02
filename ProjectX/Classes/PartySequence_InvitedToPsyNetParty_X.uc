@@ -1,0 +1,1 @@
+class PartySequence_InvitedToPsyNetParty_X extends Object;

@@ -1,0 +1,1 @@
+class RPC_GetPopulation_X extends RPC_X;

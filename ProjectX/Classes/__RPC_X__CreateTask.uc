@@ -1,0 +1,1 @@
+class __RPC_X__CreateTask extends Object;

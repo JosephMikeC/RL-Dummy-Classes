@@ -1,0 +1,1 @@
+class LanBrowser_X extends Object;

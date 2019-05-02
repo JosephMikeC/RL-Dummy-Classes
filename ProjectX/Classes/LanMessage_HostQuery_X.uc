@@ -1,0 +1,1 @@
+class LanMessage_HostQuery_X extends LanMessage_X;

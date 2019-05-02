@@ -1,0 +1,1 @@
+class RPC_RecordMatchResults_X extends RPC_X;

@@ -1,0 +1,1 @@
+class PsyNetServiceProvider_X extends Object;

@@ -1,0 +1,1 @@
+class PartyMessage_CrossPlayTextChat_X extends PartyMessage_X;

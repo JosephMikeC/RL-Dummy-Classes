@@ -1,0 +1,1 @@
+class ReservationsMaxPlayersMessage_X extends BeaconMessage_X;

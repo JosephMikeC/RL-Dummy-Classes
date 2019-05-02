@@ -1,0 +1,1 @@
+class PartySequence_InvitedToPlatformParty_X extends Object;

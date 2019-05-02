@@ -1,0 +1,1 @@
+class GRI_X extends GameReplicationInfo;

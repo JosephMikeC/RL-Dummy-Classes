@@ -1,0 +1,1 @@
+class __OnlineGameReservations_X__NotifyReadyNetworkNext extends Object;

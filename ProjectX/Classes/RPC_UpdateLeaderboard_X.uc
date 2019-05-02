@@ -1,0 +1,1 @@
+class RPC_UpdateLeaderboard_X extends RPC_X;

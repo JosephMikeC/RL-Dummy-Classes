@@ -1,0 +1,1 @@
+class OnlineGameBlog_X extends Online_X;

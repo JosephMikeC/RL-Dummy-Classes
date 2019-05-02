@@ -1,0 +1,1 @@
+class __OnlineGameMatchmaking_X__OnReceiveGameServer extends Object;

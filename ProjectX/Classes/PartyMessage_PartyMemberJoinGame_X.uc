@@ -1,0 +1,1 @@
+class PartyMessage_PartyMemberJoinGame_X extends PartyMessage_X;

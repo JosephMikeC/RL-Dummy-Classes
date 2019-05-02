@@ -1,0 +1,1 @@
+class RPC_GetLeaderboard_X extends RPC_GetLeaderboardBase_X;

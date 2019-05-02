@@ -1,0 +1,1 @@
+class RPC_GetTrialData_X extends RPC_X;

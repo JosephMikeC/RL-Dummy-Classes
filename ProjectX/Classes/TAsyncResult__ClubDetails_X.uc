@@ -1,0 +1,1 @@
+class TAsyncResult__ClubDetails_X extends AsyncTask;

@@ -1,0 +1,1 @@
+class RPC_ClientGetStaticDataURL_X extends RPC_GetStaticDataURL_X;

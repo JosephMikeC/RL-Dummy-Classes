@@ -1,0 +1,1 @@
+class OnlineGamePrivileges_X extends Online_X;

@@ -1,0 +1,1 @@
+class RPC_GetLeaderboardRankForUsers_X extends RPC_GetLeaderboardRankForUsersBase_X;

@@ -5,14 +5,21 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class AkSoundSource extends ActorComponent
-    native;
+ class AkSoundSource extends ActorComponent
+ native;
 
 struct native ActiveSound
 {
-    var bool Sound;
-    var int PlayId;
-    var int StopId;
+ var bool Sound;
+ var int PlayId;
+ var int StopId;
+
+ structdefaultproperties
+ {
+     Sound=none
+     PlayId=0
+     StopId=0
+ }
 };
 
 /** Offset from owner location */
@@ -21,32 +28,3 @@ var() const vector Translation;
 var() const Rotator Rotation;
 /** Detach when all of our sounds are completed */
 var() const bool bDetachOnComplete;
-var const transient bool bRegistered;
-var const transient bool bUpdateOrientation;
-//var const transient @NULL CachedParentToWorld;
-var const transient vector WorldLocation;
-var const transient Rotator WorldRotation;
-var const export editinline transient bool Params;
-//var const transient array ActiveSounds;
-/**
-// Export UAkSoundSource::execPlay(FFrame&, void* const)
-native final k2call function Play(bool Sound)
-{
-    //native.Sound;        
-}
-
-// Export UAkSoundSource::execStop(FFrame&, void* const)
-native final k2call function Stop(bool Sound)
-{
-    //native.Sound;        
-}
-
-// Export UAkSoundSource::execIsPlaying(FFrame&, void* const)
-native final k2call function bool IsPlaying(bool Sound)
-{
-    //native.Sound;        
-}
-
-// Export UAkSoundSource::execIsPlayingAny(FFrame&, void* const)
-native final k2call function bool IsPlayingAny();
-**/

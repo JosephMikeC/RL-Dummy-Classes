@@ -1,0 +1,1 @@
+class RPC_CheckReplacementDedicatedServer_X extends RPC_X;

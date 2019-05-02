@@ -1,0 +1,1 @@
+class PartyConfig_X extends OnlineConfig_X;

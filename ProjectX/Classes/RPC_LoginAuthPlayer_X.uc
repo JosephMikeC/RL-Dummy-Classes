@@ -1,0 +1,1 @@
+class RPC_LoginAuthPlayer_X extends RPC_X;

@@ -1,0 +1,1 @@
+class PartyMessage_LobbySettings_X extends PartyMessage_X;

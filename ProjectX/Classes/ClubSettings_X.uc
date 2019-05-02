@@ -1,0 +1,1 @@
+class ClubSettings_X extends Object;

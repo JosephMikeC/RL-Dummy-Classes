@@ -1,0 +1,1 @@
+class ReservationsWaitingMessage_X extends BeaconMessage_X;

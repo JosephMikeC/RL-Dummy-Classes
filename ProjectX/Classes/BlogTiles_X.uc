@@ -1,0 +1,1 @@
+class BlogTiles_X extends Object;

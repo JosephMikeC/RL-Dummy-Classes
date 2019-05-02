@@ -1,0 +1,1 @@
+class PartyMessage_LocalPlayers_X extends PartyMessage_X;

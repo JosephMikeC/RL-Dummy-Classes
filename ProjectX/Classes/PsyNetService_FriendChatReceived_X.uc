@@ -1,0 +1,1 @@
+class PsyNetService_FriendChatReceived_X extends PsyNetClientService_X;

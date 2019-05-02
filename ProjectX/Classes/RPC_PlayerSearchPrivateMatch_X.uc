@@ -1,0 +1,1 @@
+class RPC_PlayerSearchPrivateMatch_X extends RPC_X;

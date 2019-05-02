@@ -1,0 +1,1 @@
+class ReservationsWrongRankedMatchMessage_X extends BeaconMessage_X;

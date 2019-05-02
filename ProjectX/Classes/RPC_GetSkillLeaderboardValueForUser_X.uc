@@ -1,0 +1,1 @@
+class RPC_GetSkillLeaderboardValueForUser_X extends RPC_GetLeaderboardValueForUserBase_X;

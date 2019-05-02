@@ -1,0 +1,1 @@
+class RPC_AddPlayerToRole_X extends RPC_X;

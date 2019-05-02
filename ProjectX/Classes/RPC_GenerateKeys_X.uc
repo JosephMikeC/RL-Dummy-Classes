@@ -1,0 +1,1 @@
+class RPC_GenerateKeys_X extends RPC_Keysbase_X;

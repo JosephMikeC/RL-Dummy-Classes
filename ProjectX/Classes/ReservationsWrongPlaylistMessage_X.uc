@@ -1,0 +1,1 @@
+class ReservationsWrongPlaylistMessage_X extends BeaconMessage_X;

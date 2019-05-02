@@ -1,0 +1,1 @@
+class WebImageCache_X extends Object;

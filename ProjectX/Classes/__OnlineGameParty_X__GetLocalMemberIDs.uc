@@ -1,0 +1,1 @@
+class __OnlineGameParty_X__GetLocalMemberIDs extends Object;

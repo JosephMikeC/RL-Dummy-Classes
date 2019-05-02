@@ -1,0 +1,1 @@
+class RPC_CheckKeys_X extends RPC_GetKeys_X;

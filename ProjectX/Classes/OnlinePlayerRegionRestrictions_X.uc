@@ -1,0 +1,1 @@
+class OnlinePlayerRegionRestrictions_X extends Online_X;

@@ -1,0 +1,1 @@
+class __MatchRecorder_X__GetPlayerData extends Object;

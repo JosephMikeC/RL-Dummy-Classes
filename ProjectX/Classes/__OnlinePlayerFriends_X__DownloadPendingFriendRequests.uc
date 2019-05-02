@@ -1,0 +1,1 @@
+class __OnlinePlayerFriends_X__DownloadPendingFriendRequests extends Object;

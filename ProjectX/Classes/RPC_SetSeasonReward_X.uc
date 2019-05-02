@@ -1,0 +1,1 @@
+class RPC_SetSeasonReward_X extends RPC_X;

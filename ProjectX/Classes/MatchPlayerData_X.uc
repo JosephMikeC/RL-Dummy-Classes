@@ -1,0 +1,1 @@
+class MatchPlayerData_X extends Object;

@@ -1,0 +1,1 @@
+class PsyNetService_FriendAcceptedRequest_X extends PsyNetService_PersonalInfo_X;

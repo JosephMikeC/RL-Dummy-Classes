@@ -1,1 +1,22 @@
 class PlaylistSettings_X extends Object;
+
+var() string Title;
+var() string Description;
+var() int PlaylistId;
+var() int PlayerCount;
+var() bool bStandard;
+var() bool bRanked;
+var() bool bSolo;
+var() bool bHidden;
+var() bool bNew;
+var() bool bApplyQuitPenalty;
+var() bool bAllowForfeit;
+var() bool bDisableRankedReconnect;
+var() bool bIgnoreAssignTeams;
+var() bool bKickOnMigrate;
+var() bool bAllowClubs;
+var() bool bPlayersVSBots;
+var() TimeWindow PlaylistTimeWindow;
+var() array<PresetMutators_X> PresetMutators;
+var() name MapName;
+var() string ServerCommand;

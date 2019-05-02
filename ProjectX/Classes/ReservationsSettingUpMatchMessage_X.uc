@@ -1,0 +1,1 @@
+class ReservationsSettingUpMatchMessage_X extends BeaconMessage_X;

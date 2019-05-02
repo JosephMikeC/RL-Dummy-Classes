@@ -5,11 +5,11 @@
  *
  * All rights belong to their respective owners.
  *******************************************************************************/
-class AkSoundCue extends Object
-    native;
+ class AkSoundCue extends Object
+ native;
 
 /** The bank required for this Ak sound */
-//var() AkParamSet RequiredBank;
+var() AkParamSet RequiredBank;
 /** The named event to send to the sound system in order to start this sound. */
 var() string StartEvent;
 /** The named event to send to the sound system in order to stop this sound. */

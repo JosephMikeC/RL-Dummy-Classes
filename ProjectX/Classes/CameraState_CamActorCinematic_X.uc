@@ -1,0 +1,1 @@
+class CameraState_CamActorCinematic_X extends CameraState_CamActor_X;

@@ -1,0 +1,1 @@
+class OnlineGameMatchmakingBase_X extends Online_X;

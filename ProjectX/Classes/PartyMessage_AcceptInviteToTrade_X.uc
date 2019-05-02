@@ -1,0 +1,1 @@
+class PartyMessage_AcceptInviteToTrade_X extends PartyMessage_X;
